@@ -93,13 +93,36 @@
 
   <!-- ══ EXPERIENCE ══ -->
   <section id="experience">
+    <div class="exp-progress"><div class="exp-progress-fill"></div></div>
     <div class="section-label">Experience</div>
     <h2 class="section-title">Where I've<br><em>worked.</em></h2>
+
+    <!-- Company badge strip -->
+    <div class="exp-companies-strip">
+      <div class="exp-company-card reveal-left" style="--delay: 0s">
+        <div class="exp-company-mark">G</div>
+        <div class="exp-card-company-name">Google</div>
+        <div class="exp-card-role">Software Engineering Intern</div>
+        <div class="exp-card-period">Summer 2024</div>
+      </div>
+      <div class="exp-company-card reveal-left" style="--delay: 0.12s">
+        <div class="exp-company-mark">M</div>
+        <div class="exp-card-company-name">Meta</div>
+        <div class="exp-card-role">Software Engineering Intern</div>
+        <div class="exp-card-period">Summer 2023</div>
+      </div>
+      <div class="exp-company-card reveal-left" style="--delay: 0.24s">
+        <div class="exp-company-mark">+</div>
+        <div class="exp-card-company-name">Earlier Role</div>
+        <div class="exp-card-role">Internship / Early Role</div>
+        <div class="exp-card-period">Summer 2022</div>
+      </div>
+    </div>
 
     <div class="timeline">
 
       <!-- Item 1 -->
-      <div class="timeline-item reveal">
+      <div class="timeline-item reveal-left" style="--delay: 0s">
         <div class="timeline-dot"></div>
         <div class="exp-header">
           <span class="exp-role">Job Title</span>
@@ -114,7 +137,7 @@
       </div>
 
       <!-- Item 2 -->
-      <div class="timeline-item reveal">
+      <div class="timeline-item reveal-left" style="--delay: 0.1s">
         <div class="timeline-dot"></div>
         <div class="exp-header">
           <span class="exp-role">Previous Role</span>
@@ -129,7 +152,7 @@
       </div>
 
       <!-- Item 3 -->
-      <div class="timeline-item reveal">
+      <div class="timeline-item reveal-left" style="--delay: 0.2s">
         <div class="timeline-dot"></div>
         <div class="exp-header">
           <span class="exp-role">Internship / Early Role</span>
@@ -294,7 +317,7 @@
       nav.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
 
-    // Scroll reveal
+    // Scroll reveal (fade up + slide from left)
     const observer = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -304,7 +327,32 @@
       });
     }, { threshold: 0.12 });
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal, .reveal-left').forEach(el => observer.observe(el));
+
+    // Experience section: scroll-progress bar + title parallax
+    const expSection = document.getElementById('experience');
+    const progressFill = document.querySelector('.exp-progress-fill');
+    const expTitle = expSection ? expSection.querySelector('.section-title') : null;
+
+    if (expSection && (progressFill || expTitle)) {
+      window.addEventListener('scroll', () => {
+        const rect = expSection.getBoundingClientRect();
+        const sectionH = expSection.offsetHeight;
+        const winH = window.innerHeight;
+
+        // Progress: 0 when section top reaches viewport, 100 when section bottom leaves
+        const scrolled = winH - rect.top;
+        const total = sectionH + winH;
+        const pct = Math.min(Math.max(scrolled / total * 100, 0), 100);
+        if (progressFill) progressFill.style.width = pct + '%';
+
+        // Subtle parallax on section title
+        if (expTitle && rect.top < winH && rect.bottom > 0) {
+          const progress = (winH - rect.top) / (sectionH + winH);
+          expTitle.style.transform = `translateY(${progress * -24}px)`;
+        }
+      }, { passive: true });
+    }
   </script>
 </body>
 
