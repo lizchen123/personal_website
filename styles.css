@@ -518,7 +518,71 @@ h2.section-title em {
     left: 0;
     color: var(--border);
 }
+/* ─── COMPANIES LOGOS ─── */
+.companies-container {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
 
+.companies-title {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+}
+
+.logos-track {
+    display: flex;
+    gap: 2.5rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    scroll-behavior: smooth;
+}
+
+.logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+    width: 120px;
+}
+
+.logo-image {
+    width: 100%;
+    max-width: 80px;
+    max-height: 80px;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo-item:hover .logo-image {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 12px rgba(23, 74, 58, 0.3));
+}
+
+.logo-label {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+}
+
+.logo-item.scroll-logo {
+    opacity: 0;
+    transform: translateX(60px);
+}
+
+.logo-item.scroll-logo.visible {
+    opacity: 1;
+    transform: translateX(0);
+    animation: slideInFromRight 0.7s ease-out forwards;
+    animation-delay: var(--delay, 0s);
+}
 /* ─── PROJECTS ─── */
 #projects {
     border-top: 1px solid var(--border);
@@ -771,7 +835,17 @@ footer {
         transform: scaleY(1);
     }
 }
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
 
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 /* ─── REVEAL ON SCROLL ─── */
 .reveal {
     opacity: 0;
