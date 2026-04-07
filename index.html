@@ -96,65 +96,65 @@
     <div class="section-label">Experience</div>
     <h2 class="section-title">Where I've<br><em>worked.</em></h2>
 
-    <div class="timeline">
+    <div class="exp-panels">
 
-      <!-- Item 1 -->
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="exp-header">
-          <span class="exp-role">SWE Intern</span>
-          <span class="exp-date">May 2026 — August 2026</span>
+      <!-- Panel 1 — Meta 2026 -->
+      <div class="exp-panel">
+        <div class="exp-panel-text">
+          <div class="exp-panel-meta">
+            <span class="exp-panel-num">01</span>
+            <span class="exp-panel-date">May 2026 — August 2026</span>
+          </div>
+          <h3 class="exp-panel-role">SWE Intern</h3>
+          <div class="exp-panel-company">Meta · Bellevue, WA</div>
+          <ul class="exp-panel-bullets">
+            <li>Incoming summer 2026</li>
+          </ul>
         </div>
-        <div class="exp-company">Meta · Bellevue, WA</div>
-        <ul class="exp-description">
-          <li>Incoming summer 2026</li>
-        </ul>
-      </div>
-
-      <!-- Item 2 -->
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="exp-header">
-          <span class="exp-role">SWE Intern</span>
-          <span class="exp-date">May 2025 — August 2025</span>
-        </div>
-        <div class="exp-company">Google · San Bruno, CA</div>
-        <ul class="exp-description">
-          <li>Collaborated with stakeholders to define and scope a significant project.</li>
-          <li>Wrote, shipped, or published something that had real-world adoption.</li>
-          <li>Contributed to a team or product that you're genuinely proud of.</li>
-        </ul>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="exp-header">
-          <span class="exp-role">SWE Intern</span>
-          <span class="exp-date">May 2024 — August 2024</span>
-        </div>
-        <div class="exp-company">Google · Mountain View, CA</div>
-        <ul class="exp-description">
-          <li>Foundational experience that shaped your professional perspective.</li>
-          <li>Skill or tool you mastered that you still use today.</li>
-        </ul>
-      </div>
-
-    </div>
-
-    <!-- ═ Company Logos Section ═ -->
-    <div class="companies-container">
-      <h3 class="companies-title">Companies</h3>
-      <div class="logos-track">
-        <div class="logo-item scroll-logo" style="--delay: 0s;">
-          <img src="images/google_logo.jpg" alt="Google" class="logo-image">
-          <p class="logo-label">Google</p>
-        </div>
-        <div class="logo-item scroll-logo" style="--delay: 0.2s;">
-          <img src="images/meta_logo.webp" alt="Meta" class="logo-image">
-          <p class="logo-label">Meta</p>
+        <div class="exp-panel-logo-wrap">
+          <img src="images/meta_logo.webp" alt="Meta" class="exp-panel-logo">
         </div>
       </div>
+
+      <!-- Panel 2 — Google 2025 -->
+      <div class="exp-panel exp-panel-alt">
+        <div class="exp-panel-text">
+          <div class="exp-panel-meta">
+            <span class="exp-panel-num">02</span>
+            <span class="exp-panel-date">May 2025 — August 2025</span>
+          </div>
+          <h3 class="exp-panel-role">SWE Intern</h3>
+          <div class="exp-panel-company">Google · San Bruno, CA</div>
+          <ul class="exp-panel-bullets">
+            <li>Collaborated with stakeholders to define and scope a significant project.</li>
+            <li>Wrote, shipped, or published something that had real-world adoption.</li>
+            <li>Contributed to a team or product that you're genuinely proud of.</li>
+          </ul>
+        </div>
+        <div class="exp-panel-logo-wrap">
+          <img src="images/google_logo.jpg" alt="Google" class="exp-panel-logo">
+        </div>
+      </div>
+
+      <!-- Panel 3 — Google 2024 -->
+      <div class="exp-panel">
+        <div class="exp-panel-text">
+          <div class="exp-panel-meta">
+            <span class="exp-panel-num">03</span>
+            <span class="exp-panel-date">May 2024 — August 2024</span>
+          </div>
+          <h3 class="exp-panel-role">SWE Intern</h3>
+          <div class="exp-panel-company">Google · Mountain View, CA</div>
+          <ul class="exp-panel-bullets">
+            <li>Foundational experience that shaped your professional perspective.</li>
+            <li>Skill or tool you mastered that you still use today.</li>
+          </ul>
+        </div>
+        <div class="exp-panel-logo-wrap">
+          <img src="images/google_logo.jpg" alt="Google" class="exp-panel-logo">
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -319,17 +319,17 @@
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Scroll reveal for logo items (with staggered animation)
-    const logoObserver = new IntersectionObserver(entries => {
+    // Experience panel scroll animation
+    const panelObserver = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          logoObserver.unobserve(e.target);
+          e.target.classList.add('in-view');
+          panelObserver.unobserve(e.target);
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.15 });
 
-    document.querySelectorAll('.scroll-logo').forEach(el => logoObserver.observe(el));
+    document.querySelectorAll('.exp-panel').forEach(el => panelObserver.observe(el));
   </script>
 </body>
 
