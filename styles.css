@@ -431,6 +431,120 @@ h2.section-title em {
 /* ─── EXPERIENCE ─── */
 #experience {
     border-top: 1px solid var(--border);
+    position: relative;
+}
+
+/* Scroll-progress bar pinned to top of section */
+.exp-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--border);
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.exp-progress-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0%;
+    background: linear-gradient(to right, var(--accent), var(--accent2));
+    transition: width .12s linear;
+}
+
+/* Company badge strip */
+.exp-companies-strip {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 4rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.exp-companies-strip::-webkit-scrollbar {
+    display: none;
+}
+
+.exp-company-card {
+    flex: 0 0 180px;
+    border: 1px solid var(--border);
+    padding: 1.5rem 1.25rem;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    transition: border-color .3s;
+}
+
+.exp-company-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .4s;
+}
+
+.exp-company-card:hover {
+    border-color: var(--accent);
+}
+
+.exp-company-card:hover::after {
+    transform: scaleX(1);
+}
+
+.exp-company-mark {
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--accent);
+    transition: border-color .3s, background .3s, color .3s;
+}
+
+.exp-company-card:hover .exp-company-mark {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: var(--bg);
+}
+
+.exp-card-company-name {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--text);
+    margin-bottom: .25rem;
+}
+
+.exp-card-role {
+    font-family: var(--mono);
+    font-size: .62rem;
+    letter-spacing: .06em;
+    color: var(--muted);
+    margin-bottom: .2rem;
+}
+
+.exp-card-period {
+    font-family: var(--mono);
+    font-size: .6rem;
+    letter-spacing: .1em;
+    color: var(--accent);
+    text-transform: uppercase;
 }
 
 .timeline {
@@ -780,6 +894,18 @@ footer {
 }
 
 .reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Slide in from left */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity .7s ease var(--delay, 0s), transform .7s ease var(--delay, 0s);
+}
+
+.reveal-left.visible {
     opacity: 1;
     transform: none;
 }
