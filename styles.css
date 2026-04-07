@@ -433,92 +433,152 @@ h2.section-title em {
     border-top: 1px solid var(--border);
 }
 
-.timeline {
-    position: relative;
-    padding-left: 2rem;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 8px;
-    bottom: 8px;
-    width: 1px;
-    background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
-}
-
-.timeline-item {
-    position: relative;
-    padding-bottom: 3.5rem;
-}
-
-.timeline-item:last-child {
-    padding-bottom: 0;
-}
-
-.timeline-dot {
-    position: absolute;
-    left: -2.4rem;
-    top: 8px;
-    width: 10px;
-    height: 10px;
-    border: 1px solid var(--accent);
-    background: var(--bg);
-    transform: rotate(45deg);
-}
-
-.exp-header {
+/* Panels container */
+.exp-panels {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.exp-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.exp-panel:first-child {
+    border-top: 1px solid var(--border);
+}
+
+/* Alternate panel: logo on the left, text on the right */
+.exp-panel-alt .exp-panel-text {
+    order: 2;
+}
+
+.exp-panel-alt .exp-panel-logo-wrap {
+    order: 1;
+}
+
+/* ── Panel text: slides in from the opposite side of the logo ── */
+.exp-panel-text {
+    opacity: 0;
+    transform: translate(var(--tx, -40px), var(--ty, 0));
+    transition: opacity 0.8s 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.exp-panel-alt .exp-panel-text {
+    --tx: 40px;
+}
+
+/* ── Panel logo: slides in from outside ── */
+.exp-panel-logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    transform: translate(var(--tx, 80px), var(--ty, 0));
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.exp-panel-alt .exp-panel-logo-wrap {
+    --tx: -80px;
+}
+
+/* ── Visible state ── */
+.exp-panel.in-view .exp-panel-text,
+.exp-panel.in-view .exp-panel-logo-wrap {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* ── Logo image ── */
+.exp-panel-logo {
+    max-width: 180px;
+    max-height: 120px;
+    object-fit: contain;
+    filter: grayscale(15%);
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.exp-panel:hover .exp-panel-logo {
+    transform: scale(1.06);
+    filter: grayscale(0%) drop-shadow(0 4px 20px rgba(23, 74, 58, 0.25));
+}
+
+/* ── Content details ── */
+.exp-panel-meta {
+    display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    gap: .5rem;
-    margin-bottom: .5rem;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
-.exp-role {
-    font-family: var(--serif);
-    font-size: 1.4rem;
-    font-weight: 300;
-    color: var(--text);
-}
-
-.exp-date {
+.exp-panel-num {
     font-family: var(--mono);
-    font-size: .68rem;
-    letter-spacing: .1em;
+    font-size: 0.65rem;
+    color: var(--border);
+    letter-spacing: 0.1em;
+}
+
+.exp-panel-date {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
     color: var(--accent);
     text-transform: uppercase;
 }
 
-.exp-company {
-    font-family: var(--mono);
-    font-size: .78rem;
-    letter-spacing: .06em;
-    color: var(--accent2);
-    margin-bottom: .85rem;
+.exp-panel-role {
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 300;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+    line-height: 1.1;
 }
 
-.exp-description {
+.exp-panel-company {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    color: var(--accent2);
+    margin-bottom: 1.25rem;
+}
+
+.exp-panel-bullets {
     color: var(--muted);
     font-size: 1rem;
-}
-
-.exp-description li {
-    margin-bottom: .4rem;
-    padding-left: 1rem;
-    position: relative;
     list-style: none;
 }
 
-.exp-description li::before {
+.exp-panel-bullets li {
+    padding-left: 1.25rem;
+    margin-bottom: 0.45rem;
+    position: relative;
+    opacity: 0;
+}
+
+.exp-panel-bullets li::before {
     content: '—';
     position: absolute;
     left: 0;
     color: var(--border);
 }
 
+/* Staggered bullet reveal */
+.exp-panel.in-view .exp-panel-bullets li {
+    animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.exp-panel.in-view .exp-panel-bullets li:nth-child(1) { animation-delay: 0.45s; }
+.exp-panel.in-view .exp-panel-bullets li:nth-child(2) { animation-delay: 0.60s; }
+.exp-panel.in-view .exp-panel-bullets li:nth-child(3) { animation-delay: 0.75s; }
 /* ─── PROJECTS ─── */
 #projects {
     border-top: 1px solid var(--border);
@@ -771,7 +831,6 @@ footer {
         transform: scaleY(1);
     }
 }
-
 /* ─── REVEAL ON SCROLL ─── */
 .reveal {
     opacity: 0;
@@ -810,5 +869,28 @@ footer {
     .hero-cta {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    /* Experience panels — stack vertically, slide from below */
+    .exp-panel {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2.5rem 0;
+    }
+
+    .exp-panel-alt .exp-panel-text {
+        order: 1;
+    }
+
+    .exp-panel-alt .exp-panel-logo-wrap {
+        order: 2;
+    }
+
+    .exp-panel-text,
+    .exp-panel-alt .exp-panel-text,
+    .exp-panel-logo-wrap,
+    .exp-panel-alt .exp-panel-logo-wrap {
+        --tx: 0;
+        --ty: 30px;
     }
 }
