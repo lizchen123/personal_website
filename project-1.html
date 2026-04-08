@@ -29,14 +29,15 @@
     <div class="project-detail-inner">
       <div class="project-detail-header">
         <a href="index.html#projects" class="back-link">← Back to Projects</a>
-        <h1 class="project-detail-title">Project Name One</h1>
+        <h1 class="project-detail-title">Tissue.ai</h1>
       </div>
 
       <div class="project-detail-meta">
         <div class="project-detail-tags">
-          <span class="tag">React</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">API</span>
+        <span class="tag">Next.js</span>
+        <span class="tag">React</span>
+        <span class="tag">Letta API</span>
+        <span class="tag">Tailwind CSS</span>
         </div>
       </div>
 
@@ -44,52 +45,58 @@
         <div class="project-detail-section">
           <h2>Overview</h2>
           <p>
-            A concise description of what this project does and why it's interesting. Mention the problem it solves or
-            the idea behind it. Expand on the initial concept and explain the motivation behind the project.
+            One of the biggest barriers for new developers is knowing where to start when contributing to open-source projects. 
+            Staring at unfamiliar codebases with hundreds of files can be overwhelming, especially when trying to understand how to fix a specific GitHub issue. 
+            We wanted to create an AI-powered tool that bridges this gap by providing newcomers with the context, guidance, and confidence they need to make their first meaningful contribution.
           </p>
+          <p>
+            Our project helps users understand and guide them along the process of fixing GitHub repo issues. 
+            The client pastes the link of an issue they're working on, and we use agent orchestration to process the repository and the specific files that the issue targets. 
+            Our system collects data persistently through Letta's MemGPT technology and synthesizes information in an interactive and easy-to-grok format for users. 
+            The structured and specific data can greatly benefit developers new to the project.
+          </p>
+        </div>
+        <div class="project-detail-content">
+        <div class="project-detail-section">
+          <h2>Demo</h2>
+          <iframe class="project-video"
+            src="https://www.youtube.com/embed/WbQA3UuMFew?autoplay=1&mute=1">
+            </iframe>
         </div>
 
         <div class="project-detail-section">
-          <h2>Challenge</h2>
-          <p>
-            Describe the technical or creative challenges you faced. What made this project difficult? What constraints
-            did you work with? How did you approach solving these problems?
-          </p>
-        </div>
-
-        <div class="project-detail-section">
-          <h2>Solution</h2>
-          <p>
-            Walk through your approach and implementation strategy. Explain the key decisions you made and why. Highlight
-            any novel techniques or methodologies you employed.
-          </p>
-        </div>
-
-        <div class="project-detail-section">
-          <h2>Impact & Results</h2>
-          <p>
-            What was the outcome? Quantify the impact where possible. Did it improve performance, user experience, or
-            solve a real-world problem? What metrics demonstrate success?
-          </p>
-        </div>
-
-        <div class="project-detail-section">
-          <h2>Key Learnings</h2>
-          <p>
-            What did you learn from this project? How has it influenced your approach to future projects? What would you
-            do differently if you built it again?
-          </p>
+          <h2>Key Features</h2>
+          <ul class="feature-list">
+            <li>Multi-Agent System: Utilizes Letta for complex repository analysis</li>
+            <li>Intuitive UI: A glassmorphism UI that can make technical information accessible</li>
+            <li>Scalable Architecture: Can handle repositories of varying sizes</li>
+            <li>Full Stack Application: Built from scratch during a hackathon timeline</li>
+          </ul>
         </div>
 
         <div class="project-detail-section">
           <h2>Technologies Used</h2>
           <ul class="tech-list">
-            <li>React for frontend development</li>
-            <li>TypeScript for type safety</li>
-            <li>RESTful API integration</li>
-            <li>Other relevant technologies</li>
+            <li>Next.js: For server-side rendering</li>
+            <li>React: For building UI components</li>
+            <li>Tailwind CSS: For utility-first styling</li>
+            <li>Monaco Editor: For an interactive, IDE-like code viewer</li>
+            <li>FastAPI: For building the backend API</li>
+            <li>Letta & MCP: To analyze GitHub issues and repositories</li>
+            <li>Pydantic: For data validation and schema management</li>
           </ul>
         </div>
+        
+        <div class="project-detail-section">
+          <h2>Devpost</h2>
+          <a href="https://devpost.com/software/tissue-ai" target="_blank" class="btn btn-outline">View on Devpost</a>
+        </div>
+
+        <div class="project-detail-section">
+          <h2>Github</h2>
+          <a href="https://github.com/aaron-ang/tissue-ai" target="_blank" class="btn btn-outline">View on GitHub</a>
+        </div>
+
       </div>
 
       <div class="project-detail-footer">

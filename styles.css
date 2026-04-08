@@ -292,6 +292,20 @@ h2.section-title em {
     color: var(--text);
 }
 
+.btn-outline {
+    background: var(--bg);
+    color: var(--text);
+    border-color: var(--border);
+    display: inline-block;
+    padding: .85rem 1rem;
+}
+
+.btn-outline:hover {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+}
+
 /* diagonal line decoration */
 .hero-deco {
     position: absolute;
@@ -623,18 +637,41 @@ h2.section-title em {
 
 .project-card.expanded {
     position: fixed;
-    inset: 40px;
-    width: auto;
-    height: auto;
-    max-width: none;
+    inset: 0;
+    margin: auto;
+    width: 90vw;
+    max-width: 1000px;
+    height: fit-content;
+    max-height: 80vh;
     z-index: 100;
     padding: 3rem;
+    padding-right: 330px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     animation: expandCard 0.3s ease-out forwards;
     overflow-y: auto;
-    max-height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+}
+
+.project-card-image {
+    display: none;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-height: 60vh;
+}
+
+.project-card.expanded .project-card-image {
+    display: block;
 }
 
 .project-card.expanded .project-num {
@@ -803,6 +840,7 @@ h2.section-title em {
     display: flex;
     flex-direction: column;
     gap: .75rem;
+    align-items: flex-start;
 }
 
 .project-detail-section h2 {
@@ -816,6 +854,34 @@ h2.section-title em {
     color: var(--muted);
     font-size: 1.05rem;
     line-height: 1.8;
+}
+
+.feature-list {
+    list-style: none;
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.feature-list li {
+    padding: .5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.feature-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.project-video {
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    display: block;
+    width: 100%;
+    aspect-ratio: 4/3;
 }
 
 .tech-list {

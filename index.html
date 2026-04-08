@@ -144,6 +144,7 @@
   </section>
 
   <!-- ══ PROJECTS ══ -->
+  <!-- probably add arrows so once you're in expanded form, you can click left or right to go to the next or previous project without going back to the main page -->
   <section id="projects">
     <div class="section-label">Projects</div>
     <h2 class="section-title">Things I've<br><em>built.</em></h2>
@@ -155,16 +156,18 @@
         <div class="project-card reveal" id="project-java">
           <div class="project-num">01</div>
           <div class="project-link" title="View project">↗</div>
-          <div class="project-title">Project Name One</div>
+          <div class="project-title">Tissue.ai</div>
           <p class="project-desc">
-            A concise description of what this project does and why it's interesting. Mention the problem it solves or the
-            idea behind it.
+            Hackathon project that scrapes github open source projects and uses an AI agent to read through the github repo and find which lines of code or files should be modified to 
+            fix the bugs in the project.
           </p>
           <div class="project-tags">
+            <span class="tag">Next.js</span>
             <span class="tag">React</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">API</span>
+            <span class="tag">Letta API</span>
+            <span class="tag">Tailwind CSS</span>
           </div>
+         <!--- <img src="images/project_1_home_image.jpg" alt="Tissue.ai preview" class="project-card-image"> -->
         </div>
       </a>
 
@@ -173,14 +176,15 @@
         <div class="project-card reveal" id="project-python">
           <div class="project-num">02</div>
           <div class="project-link" title="View project">↗</div>
-          <div class="project-title">Project Name Two</div>
+          <div class="project-title">Optimized Waiting Room</div>
           <p class="project-desc">
-            Describe the scope, your role, and what made it technically or creatively challenging. What did you learn?
+            Used a voice dataset to train a model to detect different breathing-related illnesses and stress levels to optimize emergency waiting room queues.
           </p>
           <div class="project-tags">
             <span class="tag">Python</span>
             <span class="tag">ML</span>
-            <span class="tag">Data</span>
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Full Stack</span>
           </div>
         </div>
       </a>
@@ -190,14 +194,16 @@
         <div class="project-card reveal" id="project-cpp">
           <div class="project-num">03</div>
           <div class="project-link" title="View project">↗</div>
-          <div class="project-title">Project Name Three</div>
+          <div class="project-title">Computer Vision Hand Measurements</div>
           <p class="project-desc">
-            A side project, open-source contribution, or creative experiment. Don't underestimate personal work — it shows
-            passion.
+            Uses OpenCV to analyze hands and estimate measurements for patients with lymphedma. The goal is the model and build a custom glove 
+            to help patients with lymphadema get at-home treatment and monitoring. Using CV would reduce the time and effort of fitting a glove, and 
+            broadens the scope of patients who can obtain and use the glove.
           </p>
           <div class="project-tags">
-            <span class="tag">Design</span>
-            <span class="tag">Figma</span>
+            <span class="tag">Python</span>
+            <span class="tag">Typescript</span>
+            <span class="tag">OpenCV</span>
           </div>
         </div>
       </a>
@@ -207,14 +213,14 @@
         <div class="project-card reveal" id="project-fullstack">
           <div class="project-num">04</div>
           <div class="project-link" title="View project">↗</div>
-          <div class="project-title">Project Name Four</div>
+          <div class="project-title">YouTube Music Translation UI</div>
           <p class="project-desc">
-            One more project to round out the grid. Highlight a different skill set or domain than your other entries.
+            Built a full stack feature on YouTube Music that translates song lyrics in real time using the Google Translate API.
           </p>
           <div class="project-tags">
-            <span class="tag">Node.js</span>
-            <span class="tag">SQL</span>
-            <span class="tag">AWS</span>
+            <span class="tag">Full Stack</span>
+            <span class="tag">Typescript</span>
+            <span class="tag">C++</span>
           </div>
         </div>
       </a>
@@ -224,14 +230,14 @@
         <div class="project-card reveal" id="project-app">
           <div class="project-num">05</div>
           <div class="project-link" title="View project">↗</div>
-          <div class="project-title">Project Name Five</div>
+          <div class="project-title">Monopoly</div>
           <p class="project-desc">
-            A challenging project that demonstrates your expertise. Showcase what makes you unique as a developer or designer.
+            Built a rendition of Monopoly in OCaml. 
           </p>
           <div class="project-tags">
-            <span class="tag">Mobile</span>
-            <span class="tag">Swift</span>
-            <span class="tag">Firebase</span>
+            <span class="tag">OCaml</span>
+            <span class="tag">Functional Programming</span>
+            <span class="tag">GUI</span>
           </div>
         </div>
       </a>
@@ -241,14 +247,14 @@
         <div class="project-card reveal" id="project-ml">
           <div class="project-num">06</div>
           <div class="project-link" title="View project">↗</div>
-          <div class="project-title">Project Name Six</div>
+          <div class="project-title">Personal Website</div>
           <p class="project-desc">
-            Show variety in your portfolio. This could be a different type of project that demonstrates growth and versatility.
+            Designed and developed a personal website. Built with a custom CSS grid layout, scroll and hover event listener animations. 
           </p>
           <div class="project-tags">
-            <span class="tag">Data Science</span>
-            <span class="tag">TensorFlow</span>
-            <span class="tag">Jupyter</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
           </div>
         </div>
       </a>
@@ -317,91 +323,18 @@
 
   <!-- ══ FOOTER ══ -->
   <footer>
-    <span class="footer-name">Your Name — Portfolio</span>
+    <span class="footer-name">Elizabeth Chen — Portfolio</span>
     <ul class="footer-links">
-      <li><a href="mailto:you@email.com">Email</a></li>
-      <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-      <li><a href="https://github.com" target="_blank">GitHub</a></li>
+      <li><a href="mailto:elizabethchen05@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/elizabeth-c-059762238/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://github.com/lizchen123" target="_blank">GitHub</a></li>
       <li><a href="#">Resume</a></li>
     </ul>
-    <span class="footer-copy">© 2025 Your Name</span>
+    <span class="footer-copy">© 2026 Elizabeth Chen</span>
   </footer>
 
   <!-- ══ SCRIPTS ══ -->
-  <script>
-    // Sticky nav shadow on scroll
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-    }, { passive: true });
-
-    // Scroll reveal
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // Project card expansion on hover
-    const projectCards = document.querySelectorAll('.project-card');
-    const projectOverlay = document.querySelector('.project-overlay');
-    let expandedCard = null;
-    let hoverTimeout = null;
-
-    projectCards.forEach(card => {
-      const link = card.closest('.project-card-link');
-      
-      link.addEventListener('mouseenter', () => {
-        if (expandedCard) return;
-        hoverTimeout = setTimeout(() => {
-          expandedCard = card;
-          card.classList.add('expanded');
-          projectOverlay.classList.add('active');
-        }, 1000);
-      });
-
-      link.addEventListener('mouseleave', () => {
-        clearTimeout(hoverTimeout);
-        if (expandedCard === card) {
-          card.classList.remove('expanded');
-          projectOverlay.classList.remove('active');
-          expandedCard = null;
-        }
-      });
-    });
-
-    // Close expanded card when clicking overlay
-    projectOverlay.addEventListener('click', () => {
-      if (expandedCard) {
-        expandedCard.classList.remove('expanded');
-        projectOverlay.classList.remove('active');
-        expandedCard = null;
-      }
-    });
-
-    // Prevent overlay click from bubbling
-    document.addEventListener('click', (e) => {
-      if (e.target === projectOverlay && expandedCard) {
-        expandedCard.classList.remove('expanded');
-        projectOverlay.classList.remove('active');
-        expandedCard = null;
-      }
-    });
-
-    // Close expanded card with ESC key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && expandedCard) {
-        expandedCard.classList.remove('expanded');
-        projectOverlay.classList.remove('active');
-        expandedCard = null;
-      }
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
