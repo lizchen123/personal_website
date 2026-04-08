@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Five — Elizabeth Chen Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ══ NAV ══ -->
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">Home</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#leadership">Leadership</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══ PROJECT DETAIL ══ -->
+  <section id="project-detail">
+    <div class="project-detail-inner">
+      <div class="project-detail-header">
+        <a href="index.html#projects" class="back-link">← Back to Projects</a>
+        <h1 class="project-detail-title">Project Name Five</h1>
+      </div>
+
+      <div class="project-detail-meta">
+        <div class="project-detail-tags">
+          <span class="tag">Mobile</span>
+          <span class="tag">Swift</span>
+          <span class="tag">Firebase</span>
+        </div>
+      </div>
+
+      <div class="project-detail-content">
+        <div class="project-detail-section">
+          <h2>Overview</h2>
+          <p>
+            A challenging project that demonstrates your expertise. Showcase what makes you unique as a developer or designer.
+            Expand on the initial concept and explain the motivation behind the project.
+          </p>
+        </div>
+
+        <div class="project-detail-section">
+          <h2>Challenge</h2>
+          <p>
+            Describe the technical or creative challenges you faced. What made this project difficult? What constraints
+            did you work with? How did you approach solving these problems?
+          </p>
+        </div>
+
+        <div class="project-detail-section">
+          <h2>Solution</h2>
+          <p>
+            Walk through your approach and implementation strategy. Explain the key decisions you made and why. Highlight
+            any novel techniques or methodologies you employed.
+          </p>
+        </div>
+
+        <div class="project-detail-section">
+          <h2>Impact & Results</h2>
+          <p>
+            What was the outcome? Quantify the impact where possible. Did it improve performance, user experience, or
+            solve a real-world problem? What metrics demonstrate success?
+          </p>
+        </div>
+
+        <div class="project-detail-section">
+          <h2>Key Learnings</h2>
+          <p>
+            What did you learn from this project? How has it influenced your approach to future projects? What would you
+            do differently if you built it again?
+          </p>
+        </div>
+
+        <div class="project-detail-section">
+          <h2>Technologies Used</h2>
+          <ul class="tech-list">
+            <li>Swift for iOS development</li>
+            <li>Firebase for backend services</li>
+            <li>Mobile UI design patterns</li>
+            <li>Other relevant technologies</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="project-detail-footer">
+        <div class="project-nav">
+          <a href="project-4.html" class="btn btn-ghost">← Previous Project</a>
+          <a href="project-6.html" class="btn btn-ghost">Next Project →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <span class="footer-name">Elizabeth Chen — Portfolio</span>
+    <ul class="footer-links">
+      <li><a href="mailto:you@email.com">Email</a></li>
+      <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+      <li><a href="https://github.com" target="_blank">GitHub</a></li>
+      <li><a href="#">Resume</a></li>
+    </ul>
+    <span class="footer-copy">© 2025 Elizabeth Chen</span>
+  </footer>
+
+  <!-- ══ SCRIPTS ══ -->
+  <script>
+    // Sticky nav shadow on scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  </script>
+</body>
+
+</html>
