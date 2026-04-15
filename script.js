@@ -1,10 +1,10 @@
-// Sticky nav shadow on scroll
+// shadow for scrolling
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
 
-// Scroll reveal
+// scroll reveal animation
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -16,7 +16,7 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Project card expansion on hover
+// hover to expand
 const projectCards = document.querySelectorAll('.project-card');
 const projectOverlay = document.querySelector('.project-overlay');
 let expandedCard = null;
@@ -31,12 +31,11 @@ projectCards.forEach(card => {
       expandedCard = card;
       card.classList.add('expanded');
       projectOverlay.classList.add('active');
-    }, 1000);
+    }, 1000); // maybe let this be longer depending on user testing
   });
 
   link.addEventListener('mouseleave', () => {
     clearTimeout(hoverTimeout);
-    // Don't collapse if card is already expanded
     if (expandedCard === card && !card.classList.contains('expanded')) {
       card.classList.remove('expanded');
       projectOverlay.classList.remove('active');
@@ -45,16 +44,7 @@ projectCards.forEach(card => {
   });
 });
 
-// Close expanded card when clicking overlay
-projectOverlay.addEventListener('click', () => {
-  if (expandedCard) {
-    expandedCard.classList.remove('expanded');
-    projectOverlay.classList.remove('active');
-    expandedCard = null;
-  }
-});
-
-// Prevent overlay click from bubbling
+// click outside to close
 document.addEventListener('click', (e) => {
   if (e.target === projectOverlay && expandedCard) {
     expandedCard.classList.remove('expanded');
@@ -63,16 +53,7 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// Close expanded card with ESC key
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && expandedCard) {
-    expandedCard.classList.remove('expanded');
-    projectOverlay.classList.remove('active');
-    expandedCard = null;
-  }
-});
-
-// Navigate to project page when clicking on expanded card
+// click inside to go to project page
 projectCards.forEach(card => {
   const link = card.closest('.project-card-link');
   link.addEventListener('click', (e) => {
