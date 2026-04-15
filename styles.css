@@ -29,10 +29,10 @@
 
 /* ─── TOKENS ─── */
 :root {
-    --bg: #e5f0ec;
+    --bg: #ffffff;
     --surface: #3b4642;
     --border: #46544f;
-    --text: #272e2b;
+    --text: #464e4a;
     --muted: #6b6560;
     --accent: #174a3a;
     --accent2: #0d3a2b;
@@ -975,6 +975,133 @@ h2.section-title em {
 
 .leadership-item:hover::after {
     transform: scaleY(1);
+}
+
+/* ─── EXPERIENCE CARDS ─── */
+
+.exp-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.exp-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.exp-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 56px rgba(0, 0, 0, 0.14);
+}
+
+.exp-card-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.6rem;
+}
+
+.exp-logo-badge {
+    width: 62px;
+    height: 62px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 9px;
+}
+
+.meta-badge {
+    background: linear-gradient(135deg, #0082FB 0%, #8B4FE8 100%);
+}
+
+.google-badge {
+    background: #ffffff;
+    border: 1.5px solid #e0e0e0;
+}
+
+.exp-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.exp-company-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.exp-company-name {
+    font-family: var(--font-main);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.01em;
+}
+
+.exp-date-badge {
+    font-family: var(--font-main);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.exp-card-role {
+    font-family: var(--font-main);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text);
+    opacity: 0.8;
+}
+
+.exp-card-location {
+    font-family: var(--font-main);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+}
+
+.exp-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0.6rem 0 0.25rem;
+}
+
+.exp-card .exp-description {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.exp-card .exp-description li {
+    margin-bottom: 0.4rem;
+    padding-left: 1.25rem;
+    position: relative;
+    list-style: none;
+}
+
+.exp-card .exp-description li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--border);
+}
+
+@media (max-width: 768px) {
+    .exp-cards {
+        grid-template-columns: 1fr;
+    }
 }
 
 .leadership-year {
