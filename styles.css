@@ -102,7 +102,7 @@ nav {
 }
 
 nav.scrolled {
-    background: rgba(13, 13, 13, .88);
+    background: #8d9995;
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
 }
@@ -160,26 +160,6 @@ section {
     margin: 0 auto;
 }
 
-.section-label {
-    font-family: var(--font-main);
-    font-size: .7rem;
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: .75rem;
-}
-
-.section-label::before {
-    content: '';
-    display: inline-block;
-    width: 32px;
-    height: 1px;
-    background: var(--accent);
-}
-
 h2.section-title {
     font-family: var(--font-main);
     font-size: clamp(2.2rem, 5vw, 3.8rem);
@@ -210,17 +190,6 @@ h2.section-title em {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
-}
-
-.hero-eyebrow {
-    font-family: var(--font-main);
-    font-size: .75rem;
-    letter-spacing: .25em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 1.5rem;
-    opacity: 0;
-    animation: fadeUp .7s .2s forwards;
 }
 
 .hero-name {
@@ -346,25 +315,6 @@ h2.section-title em {
     border-top: 1px solid var(--border);
 }
 
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-}
-
-.photo-icon {
-    width: 48px;
-    height: 48px;
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--muted);
-    font-size: 1.4rem;
-}
-
 .about-body p {
     color: var(--muted);
     margin-bottom: 1.25rem;
@@ -408,23 +358,6 @@ h2.section-title em {
 #experience {
     border-top: 1px solid var(--border);
 }
-
-.exp-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: .5rem;
-    margin-bottom: .5rem;
-}
-
-.exp-role {
-    font-family: var(--font-main);
-    font-size: 1.4rem;
-    font-weight: 300;
-    color: var(--text);
-}
-
 .exp-description {
     color: var(--muted);
     font-size: 1rem;
