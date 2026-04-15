@@ -446,7 +446,7 @@ h2.section-title em {
 
 .exp-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(2, minmax(0px, 1fr));
     gap: 1.5rem;
     margin-top: 1rem;
 }
