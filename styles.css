@@ -1048,7 +1048,22 @@ h2.section-title em {
 .leadership-desc {
     font-size: .97rem;
     color: var(--muted);
+    list-style: none;
 }
+
+.leadership-desc li {
+    position: relative;
+    padding-left: 1rem;
+}
+
+.leadership-desc li::before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--border);
+}
+
 
 /* footer */
 footer {
