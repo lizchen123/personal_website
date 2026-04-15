@@ -973,9 +973,9 @@ h2.section-title em {
     transition: transform .3s;
 }
 
-.leadership-item:hover::after {
+/* .leadership-item:hover::after {
     transform: scaleY(1);
-}
+} */
 
 /* ─── EXPERIENCE CARDS ─── */
 
