@@ -575,9 +575,12 @@ h2.section-title em {
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    transition: background 0.25s ease;
+    transition: background 0.25s ease, max-height 0.45s cubic-bezier(0.23, 1, 0.32, 1), clip-path 0.45s cubic-bezier(0.23, 1, 0.32, 1);
     border-radius: 20px;
     border: 1px solid var(--border);
+    max-height: 115px;
+    clip-path: inset(0 0 0 0 round 20px);
+    transform-origin: top;
 }
 
 .project-card::before {
@@ -591,6 +594,22 @@ h2.section-title em {
 
 .project-card:hover::before {
     opacity: 1;
+}
+
+.project-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, var(--bg));
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.project-card-link:hover .project-card::after {
+    opacity: 0;
 }
 
 .project-card.expanded {
@@ -694,7 +713,22 @@ h2.section-title em {
 
 .project-card-link {
     text-decoration: none;
-    display: contents;
+    display: block;
+    position: relative;
+    z-index: 1;
+    color: inherit;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+}
+
+.project-card-link:hover {
+    z-index: 10;
+}
+
+.project-card-link:hover .project-card {
+    max-height: 600px;
+    clip-path: inset(0 0 0% 0 round 20px);
+    box-shadow: 0 20px 56px rgba(0, 0, 0, 0.12);
 }
 
 .project-link {
@@ -722,7 +756,16 @@ h2.section-title em {
 /* attempt expanding project cards */
 
 #expanded-projects {
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1rem;
+    align-items: start;
+}
 
+#expanded-projects .section-title {
+    grid-column: 1 / -1;
+    margin-bottom: 1rem;
 }
 
 
