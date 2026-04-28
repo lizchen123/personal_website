@@ -496,6 +496,26 @@ h2.section-title em {
     color: var(--border);
 }
 
+/* Experience card links */
+.exp-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 20px;
+}
+
+.exp-card-link:hover .exp-card {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    background: rgba(23, 74, 58, 0.08);
+    box-shadow: 0 25px 50px rgba(23, 74, 58, 0.12);
+}
+
+.exp-card-link:hover .exp-card-role {
+    color: var(--accent);
+}
+
 @media (max-width: 768px) {
     .exp-cards {
         grid-template-columns: 1fr;
