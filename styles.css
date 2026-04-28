@@ -775,6 +775,10 @@ h2.section-title em {
     color: var(--accent);
 }
 
+
+
+
+
 /* project pages */
 #project-detail {
     border-top: 1px solid var(--border);
@@ -1102,14 +1106,3 @@ footer {
     }
 }
 
-/* scroll */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity .7s, transform .7s;
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: none;
-}
