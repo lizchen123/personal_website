@@ -32,7 +32,7 @@
     --surface: #3b4642;
     --border: #46544f;
     --text: #464e4a;
-    --muted: #6b6560;
+    --muted: #272e2b;
     --accent: #174a3a;
     --accent2: #0d3a2b;
     --font-main: 'Roboto', sans-serif !important;
@@ -102,9 +102,9 @@ nav {
 }
 
 nav.scrolled {
-    background: #8d9995;
+    background: #91a39e;
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
+    opacity: 0.9
 }
 
 .nav-logo {
@@ -183,6 +183,12 @@ h2.section-title em {
     padding-top: var(--nav-h);
     position: relative;
     max-width: 100%;
+    background-image: 
+        linear-gradient(to right, rgba(255,255,255,1) 5%, rgba(255,255,255,0.85) 35%, rgba(255,255,255,0) 60%),
+        url('images/hero_img.jpeg');
+    background-size: cover;
+    background-position: calc(50% + 500px) center;
+    background-repeat: no-repeat;
 }
 
 .hero-inner {
@@ -323,7 +329,7 @@ h2.section-title em {
 
 .about-body p strong {
     color: var(--text);
-    font-weight: 400;
+    font-weight: 700;
 }
 
 .skill-grid {
@@ -528,8 +534,8 @@ h2.section-title em {
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
     gap: 1.5px;
     background: transparent;
     position: relative;
@@ -569,58 +575,18 @@ h2.section-title em {
     pointer-events: auto;
 }
 
-.expanded-card {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 32px;
-    padding: 3rem;
-    width: 90vw;
-    max-width: 650px;
-    max-height: 80vh;
-    overflow-y: auto;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
-}
-
-.expanded-card-num {
-    font-family: var(--font-main);
-    font-size: 0.75rem;
-    color: var(--border);
-    letter-spacing: 0.1em;
-    margin-bottom: 1rem;
-}
-
-.expanded-card-title {
-    font-family: var(--font-main);
-    font-size: 2rem;
-    font-weight: 300;
-    color: var(--text);
-    margin-bottom: 1.25rem;
-    line-height: 1.2;
-}
-
-.expanded-card-desc {
-    font-size: 1rem;
-    color: var(--muted);
-    margin-bottom: 1.5rem;
-    line-height: 1.7;
-}
-
-.expanded-card-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 1.5rem;
-}
-
 .project-card {
     background: var(--bg);
     padding: 2rem;
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    transition: background 0.25s ease;
+    transition: background 0.25s ease, max-height 0.45s cubic-bezier(0.23, 1, 0.32, 1), clip-path 0.45s cubic-bezier(0.23, 1, 0.32, 1);
     border-radius: 20px;
     border: 1px solid var(--border);
+    max-height: 220px;
+    clip-path: inset(0 0 0 0 round 20px);
+    transform-origin: top;
 }
 
 .project-card::before {
@@ -636,66 +602,20 @@ h2.section-title em {
     opacity: 1;
 }
 
-.project-card.expanded {
-    position: fixed;
-    inset: 0;
-    margin: auto;
-    width: 90vw;
-    max-width: 1000px;
-    height: fit-content;
-    max-height: 80vh;
-    z-index: 100;
-    padding: 3rem;
-    padding-right: 330px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    animation: expandCard 0.3s ease-out forwards;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-}
-
-.project-card-image {
-    display: none;
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    width: 300px;
-    height: auto;
-    object-fit: cover;
+.project-card::after {
+    content: '';
     position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    max-height: 60vh;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, var(--bg));
+    pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 
-.project-card.expanded .project-card-image {
-    display: block;
-}
-
-.project-card.expanded .project-num {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-}
-
-.project-card.expanded .project-title {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.project-card.expanded .project-desc {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-    max-width: 600px;
-}
-
-.project-card.expanded .project-link {
-    position: fixed;
-    top: 1.5rem;
-    right: 1.5rem;
+.project-card-link:hover .project-card::after {
+    opacity: 0;
 }
 
 @keyframes expandCard {
@@ -726,6 +646,17 @@ h2.section-title em {
     line-height: 1.2;
 }
 
+.project-extended-title {
+    font-family: var(--font-main);
+    font-size: 1rem;
+    font-weight: 250;
+    color: var(--text);
+    margin-top: 2rem;
+    margin-bottom: .75rem;
+    line-height: 1.2;
+}
+
+
 .project-desc {
     font-size: .95rem;
     color: var(--muted);
@@ -751,7 +682,22 @@ h2.section-title em {
 
 .project-card-link {
     text-decoration: none;
-    display: contents;
+    display: block;
+    position: relative;
+    z-index: 1;
+    color: inherit;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+}
+
+/* .project-card-link:hover {
+    z-index: 10;
+} */
+
+.project-card-link:hover .project-card {
+    max-height: 600px;
+    clip-path: inset(0 0 0% 0 round 20px);
+    box-shadow: 0 20px 56px rgba(0, 0, 0, 0.12);
 }
 
 .project-link {
@@ -774,6 +720,23 @@ h2.section-title em {
     border-color: var(--accent);
     color: var(--accent);
 }
+
+
+/* attempt expanding project cards */
+
+#expanded-projects {
+    border-top: 1px solid var(--border);
+    /* display: grid; */
+    /* grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); */
+    gap: 1rem;
+    align-items: start;
+}
+
+#expanded-projects .section-title {
+    grid-column: 1 / -1;
+    margin-bottom: 1rem;
+}
+
 
 /* project pages */
 #project-detail {
@@ -879,7 +842,6 @@ h2.section-title em {
 
 .project-video {
     border-radius: 20px;
-    border: 1px solid var(--border);
     display: block;
     width: 100%;
     aspect-ratio: 4/3;
@@ -1102,14 +1064,3 @@ footer {
     }
 }
 
-/* scroll */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity .7s, transform .7s;
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: none;
-}
