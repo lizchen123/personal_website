@@ -7,7 +7,8 @@
   <title>Project Three — Elizabeth Chen Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -30,32 +31,18 @@
       <div class="project-detail-header">
         <a href="index.html#projects" class="back-link">← Back to Projects</a>
         <div class="project-detail-title-block">
-          <div class="project-logo-large" style="background: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);">CV</div>
           <div>
-            <h1 class="project-detail-title">CV Hand Measurements</h1>
-            <p class="project-type">Computer Vision Project</p>
+            <h1 class="project-detail-title">KnitDema</h1>
           </div>
         </div>
       </div>
 
       <div class="project-detail-meta">
-        <div class="project-meta-item">
-          <span class="project-meta-label">Type</span>
-          <span class="project-meta-value">Course Project</span>
-        </div>
-        <div class="project-meta-item">
-          <span class="project-meta-label">Year</span>
-          <span class="project-meta-value">2024</span>
-        </div>
-        <div class="project-meta-item">
-          <span class="project-meta-label">Status</span>
-          <span class="project-meta-value">Completed</span>
-        </div>
-      </div>
-
-      <div class="project-detail-meta">
         <div class="project-detail-tags">
-        <span class="tag">add stuff</span>
+          <span class="tag">Python</span>
+          <span class="tag">Typescript</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">MediaPipe</span>
         </div>
       </div>
 
@@ -63,56 +50,52 @@
         <div class="project-detail-section">
           <h2>Overview</h2>
           <p>
-            One of the biggest barriers for new developers is knowing where to start when contributing to open-source projects. 
-            Staring at unfamiliar codebases with hundreds of files can be overwhelming, especially when trying to understand how to fix a specific GitHub issue. 
-            We wanted to create an AI-powered tool that bridges this gap by providing newcomers with the context, guidance, and confidence they need to make their first meaningful contribution.
+            The KnitDema project is an innovative application designed to assist people with lipedema or other
+            dexterity-affecting conditions to access at-home, readily-available treatment through a specially-molded
+            glove. The glove is equipped with sensors that can detect the user's hand movements and gestures, which are
+            then processed by a machine learning model to provide real-time feedback and guidance on performing
+            lymphatic drainage massage techniques effectively.
           </p>
           <p>
-            Our project helps users understand and guide them along the process of fixing GitHub repo issues. 
-            The client pastes the link of an issue they're working on, and we use agent orchestration to process the repository and the specific files that the issue targets. 
-            Our system collects data persistently through Letta's MemGPT technology and synthesizes information in an interactive and easy-to-grok format for users. 
-            The structured and specific data can greatly benefit developers new to the project.
+            My role in this project was to update and advance the software component of this system. There are two main
+            parts to the software component: the first is to ensure users have a easy and seamless experience connecting
+            the glove to the app to access the different treatment modules via bluetooth.
+            The second part is to integrate computer vision to measure patient hand dimensions and automatically
+            generate a custom glove bitmap for the knitters to use, rather than having the patients come to the lab to
+            get their hands measured. The overall goal of this project is to make the treatment more accessible and
+            personalized for patients, while also providing valuable data and insights for healthcare providers to improve patient outcomes.
           </p>
         </div>
         <div class="project-detail-section">
           <h2>Demo</h2>
-          <iframe class="project-video"
-            src="https://www.youtube.com/embed/WbQA3UuMFew?autoplay=1&mute=1">
-            </iframe>
+          <iframe class="project-video" src="https://www.youtube.com/embed/eigGj0uCzXw?autoplay=1&mute=1">
+          </iframe>
         </div>
 
         <div class="project-detail-section">
           <h2>Key Features</h2>
           <ul class="feature-list">
-            <li>Multi-Agent System: Utilizes Letta for complex repository analysis</li>
-            <li>Intuitive UI: A glassmorphism UI that can make technical information accessible</li>
-            <li>Scalable Architecture: Can handle repositories of varying sizes</li>
-            <li>Full Stack Application: Built from scratch during a hackathon timeline</li>
+            <li>Computer Vision Integration: Uses OpenCV and MediaPipe to measure hand dimensions for custom glove generation</li>
+            <li>Bluetooth Connectivity: Seamless connection between the glove and the app for real-time massage control</li>
           </ul>
         </div>
 
         <div class="project-detail-section">
           <h2>Technologies Used</h2>
           <ul class="tech-list">
-            <li>Next.js: For server-side rendering</li>
-            <li>React: For building UI components</li>
-            <li>Tailwind CSS: For utility-first styling</li>
-            <li>Monaco Editor: For an interactive, IDE-like code viewer</li>
-            <li>FastAPI: For building the backend API</li>
-            <li>Letta & MCP: To analyze GitHub issues and repositories</li>
-            <li>Pydantic: For data validation and schema management</li>
+            <li>Typescript: For the frontend application development</li>
+            <li>Python: For computer vision processing and machine learning model development</li>
+            <li>OpenCV: For hand dimension measurement and glove bitmap generation</li>
+            <li>MediaPipe: For hand tracking and gesture recognition</li>
+            <li>HTML: For structuring the web content</li>
           </ul>
-        </div>
-        
-        <div class="project-detail-section">
-          <h2>Devpost</h2>
-          <a href="https://devpost.com/software/tissue-ai" target="_blank" class="btn btn-outline">View on Devpost</a>
         </div>
 
         <div class="project-detail-section">
-          <h2>Github</h2>
-          <a href="https://github.com/aaron-ang/tissue-ai" target="_blank" class="btn btn-outline">View on GitHub</a>
+          <h2>Lab Website</h2>
+          <a href="https://www.hybridbody.human.cornell.edu/#/knitdema/" target="_blank" class="btn btn-outline">View Project Details</a>
         </div>
+
 
       </div>
 
@@ -134,16 +117,9 @@
       <li><a href="https://github.com/lizchen123" target="_blank">GitHub</a></li>
       <li><a href="files/Elizabeth_C_Resume_2026.pdf" download="Elizabeth_Chen_Resume">Resume</a></li>
     </ul>
-    <span class="footer-copy">© 2025 Elizabeth Chen</span>
+    <span class="footer-copy">© 2026 Elizabeth Chen</span>
   </footer>
 
-  <!-- js -->
-  <script>
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-    }, { passive: true });
-  </script>
 </body>
 
 </html>

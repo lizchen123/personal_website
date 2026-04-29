@@ -32,7 +32,7 @@
     --surface: #3b4642;
     --border: #46544f;
     --text: #464e4a;
-    --muted: #6b6560;
+    --muted: #272e2b;
     --accent: #174a3a;
     --accent2: #0d3a2b;
     --font-main: 'Roboto', sans-serif !important;
@@ -102,9 +102,9 @@ nav {
 }
 
 nav.scrolled {
-    background: #8d9995;
+    background: #91a39e;
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
+    opacity: 0.9
 }
 
 .nav-logo {
@@ -183,6 +183,12 @@ h2.section-title em {
     padding-top: var(--nav-h);
     position: relative;
     max-width: 100%;
+    background-image: 
+        linear-gradient(to right, rgba(255,255,255,1) 5%, rgba(255,255,255,0.85) 35%, rgba(255,255,255,0) 60%),
+        url('images/hero_img.jpeg');
+    background-size: cover;
+    background-position: calc(50% + 500px) center;
+    background-repeat: no-repeat;
 }
 
 .hero-inner {
@@ -323,7 +329,7 @@ h2.section-title em {
 
 .about-body p strong {
     color: var(--text);
-    font-weight: 400;
+    font-weight: 700;
 }
 
 .skill-grid {
@@ -528,8 +534,8 @@ h2.section-title em {
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
     gap: 1.5px;
     background: transparent;
     position: relative;
@@ -578,7 +584,7 @@ h2.section-title em {
     transition: background 0.25s ease, max-height 0.45s cubic-bezier(0.23, 1, 0.32, 1), clip-path 0.45s cubic-bezier(0.23, 1, 0.32, 1);
     border-radius: 20px;
     border: 1px solid var(--border);
-    max-height: 115px;
+    max-height: 220px;
     clip-path: inset(0 0 0 0 round 20px);
     transform-origin: top;
 }
@@ -612,54 +618,6 @@ h2.section-title em {
     opacity: 0;
 }
 
-.project-card.expanded {
-    position: fixed;
-    inset: 0;
-    margin: auto;
-    width: 90vw;
-    max-width: 1000px;
-    height: fit-content;
-    max-height: 80vh;
-    z-index: 100;
-    padding: 3rem;
-    padding-right: 330px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    animation: expandCard 0.3s ease-out forwards;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-}
-
-.project-card.expanded .project-card-image {
-    display: block;
-}
-
-.project-card.expanded .project-num {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-}
-
-.project-card.expanded .project-title {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.project-card.expanded .project-desc {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-    max-width: 600px;
-}
-
-.project-card.expanded .project-link {
-    position: fixed;
-    top: 1.5rem;
-    right: 1.5rem;
-}
-
 @keyframes expandCard {
     from {
         opacity: 0;
@@ -687,6 +645,17 @@ h2.section-title em {
     margin-bottom: .75rem;
     line-height: 1.2;
 }
+
+.project-extended-title {
+    font-family: var(--font-main);
+    font-size: 1rem;
+    font-weight: 250;
+    color: var(--text);
+    margin-top: 2rem;
+    margin-bottom: .75rem;
+    line-height: 1.2;
+}
+
 
 .project-desc {
     font-size: .95rem;
@@ -721,9 +690,9 @@ h2.section-title em {
     border-radius: 20px;
 }
 
-.project-card-link:hover {
+/* .project-card-link:hover {
     z-index: 10;
-}
+} */
 
 .project-card-link:hover .project-card {
     max-height: 600px;
@@ -757,8 +726,8 @@ h2.section-title em {
 
 #expanded-projects {
     border-top: 1px solid var(--border);
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    /* display: grid; */
+    /* grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); */
     gap: 1rem;
     align-items: start;
 }
@@ -873,7 +842,6 @@ h2.section-title em {
 
 .project-video {
     border-radius: 20px;
-    border: 1px solid var(--border);
     display: block;
     width: 100%;
     aspect-ratio: 4/3;
