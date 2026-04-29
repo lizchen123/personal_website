@@ -525,6 +525,19 @@ h2.section-title em {
 /* projects */
 #projects {
     border-top: 1px solid var(--border);
+    /* display: grid; */
+    /* grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); */
+    gap: 1rem;
+    align-items: start;
+}
+
+#projects .section-title {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+}
+
+#projects .project-overlay {
+    display: none;
 }
 
 .projects-grid {
@@ -618,9 +631,15 @@ h2.section-title em {
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    transition: background 0.25s ease;
     border-radius: 20px;
     border: 1px solid var(--border);
+    max-height: 120px;
+    clip-path: inset(0 0 0 0 round 20px);
+    transform-origin: top;
+    transition: max-height 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+                clip-path 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+                box-shadow 0.3s ease,
+                background 0.25s ease;
 }
 
 .project-card::before {
@@ -751,7 +770,23 @@ h2.section-title em {
 
 .project-card-link {
     text-decoration: none;
-    display: contents;
+    display: block;
+    position: relative;
+    z-index: 1;
+    color: inherit;
+    border-radius: 20px;
+}
+
+.project-card-link:hover,
+.project-card-link.pinned {
+    z-index: 10;
+}
+
+.project-card-link:hover .project-card,
+.project-card-link.pinned .project-card {
+    max-height: 600px;
+    clip-path: inset(0 0 0% 0 round 20px);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
 }
 
 .project-link {
