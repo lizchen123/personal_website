@@ -183,12 +183,27 @@ h2.section-title em {
     padding-top: var(--nav-h);
     position: relative;
     max-width: 100%;
-    background-image: 
-        linear-gradient(to right, rgba(255,255,255,1) 5%, rgba(255,255,255,0.85) 35%, rgba(255,255,255,0) 60%),
-        url('images/hero_img.jpeg');
+    overflow: hidden;
+}
+
+.hero-slideshow {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
     background-size: cover;
     background-position: calc(50% + 500px) center;
     background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.hero-slide.active {
+    opacity: 1;
 }
 
 .hero-inner {
@@ -196,6 +211,8 @@ h2.section-title em {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-name {
@@ -287,6 +304,7 @@ h2.section-title em {
     background: linear-gradient(to bottom, transparent, var(--accent), transparent);
     opacity: .5;
     animation: fadeIn 1.2s 1.2s both;
+    z-index: 1;
 }
 
 .hero-scroll-hint {
@@ -305,6 +323,7 @@ h2.section-title em {
     gap: .5rem;
     opacity: 0;
     animation: fadeIn 1s 1.5s forwards;
+    z-index: 1;
 }
 
 .hero-scroll-hint::after {
