@@ -89,7 +89,9 @@
 
         <div class="project-detail-section">
           <h2>Hackathon Presentation</h2>
-          <a href="https://docs.google.com/presentation/d/1Dh98YOpa25qsBkVOfs8WYzu2EmNH9jpm1MCP8LZhrbU/edit?usp=sharing" target="_blank" class="btn btn-outline">View Presentation</a>
+          <iframe class="project-video"
+            src="https://docs.google.com/presentation/d/1Dh98YOpa25qsBkVOfs8WYzu2EmNH9jpm1MCP8LZhrbU/embed?start=false&loop=false&delayms=3000"
+            allowfullscreen></iframe>
         </div>
 
         <div class="project-detail-section">
@@ -119,6 +121,13 @@
     </ul>
     <span class="footer-copy">© 2026 Elizabeth Chen</span>
   </footer>
+  <!-- js -->
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  </script>
 </body>
 
 </html>

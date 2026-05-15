@@ -1,7 +1,6 @@
 #experience-detail {
   padding: clamp(80px, 10vh, 120px) clamp(24px, 5vw, 72px);
   min-height: 100vh;
-  background: linear-gradient(135deg, #ffffff 0%, rgba(23, 74, 58, 0.03) 100%);
 }
 
 .experience-detail-inner {
@@ -52,18 +51,19 @@
 }
 
 .experience-detail-title {
-  font-size: clamp(32px, 6vw, 48px);
-  font-weight: 700;
-  margin: 0;
-  color: var(--surface);
-  letter-spacing: -0.02em;
+  font-family: var(--font-main);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--text);
 }
 
 .experience-company {
-  font-size: 20px;
-  color: var(--accent);
-  font-weight: 600;
-  margin: 8px 0 0 0;
+  font-family: var(--font-main);
+  font-size: clamp(1.2rem, 1.5vw, 2.8rem);
+  font-weight: 200;
+  line-height: 1.15;
+  color: var(--text);
 }
 
 .experience-detail-meta {
@@ -125,6 +125,137 @@
   background: var(--accent);
   border-radius: 2px;
 }
+
+.photo-subtitle {
+  font-size: 0.52rem;
+  font-weight: 300;
+  color: var(--accent);
+  opacity: 0.85;
+  margin-top: -8px;
+  margin-bottom: 18px;
+}
+
+.photo-gallery {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(23, 74, 58, 0.3) transparent;
+}
+
+.photo-gallery::-webkit-scrollbar {
+  height: 6px;
+}
+
+.photo-gallery::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.photo-gallery::-webkit-scrollbar-thumb {
+  background: rgba(23, 74, 58, 0.3);
+  border-radius: 3px;
+}
+
+.photo-item {
+  flex-shrink: 0;
+  cursor: pointer;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.photo-item img {
+  height: 200px;
+  width: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.photo-item:hover img {
+  transform: scale(1.04);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+}
+
+.photo-item figcaption {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+  font-style: italic;
+  max-width: 180px;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.lightbox-content img {
+  max-width: 80vw;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.lightbox-content p,
+#lightbox-caption {
+  color: #e3e3e3;
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+  min-height: 20px;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.7;
+}
+
+.lightbox-close:hover { opacity: 1; }
+
+.lightbox-prev,
+.lightbox-next {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 3.5rem;
+  cursor: pointer;
+  padding: 16px;
+  opacity: 0.6;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover { opacity: 1; }
 
 .experience-section p {
   color: var(--text);

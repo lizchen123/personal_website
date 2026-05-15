@@ -11,6 +11,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="experience-styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -26,7 +27,6 @@
     </ul>
   </nav>
 
-  <!-- experience detail -->
   <section id="experience-detail">
     <div class="experience-detail-inner">
       <div class="experience-detail-header">
@@ -42,100 +42,121 @@
           </div>
         </div>
       </div>
-
-      <div class="experience-detail-meta">
-        <div class="meta-item">
-          <span class="meta-label">Duration</span>
-          <span class="meta-value">May 2024 - August 2024</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Location</span>
-          <span class="meta-value">Mountain View, CA</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Team</span>
-          <span class="meta-value">Google Search</span>
-        </div>
-      </div>
-
-      <div class="experience-detail-content">
-        <div class="experience-section">
+      <div class="project-detail-content">
+        <div class="project-detail-section">
           <h2>Overview</h2>
           <p>
-            During my first internship at Google, I joined the Experiment Launch Platform team, contributing to internal
-            tools that helped engineers run experiments at scale.
-            This experience introduced me to Google's engineering culture, tech stack, and the importance of thoughtful
-            tool design for developer productivity.
+            This was my first ever internship, and I had an amazing experience learning about Google's engineering
+            culture, structure, and tech stack.
+            I joined the Google Search team, and worked on an internal search tool used to launch experiments for the
+            Google Search team. Through this internship, I
+            was able to apply the technical skills I learned in school to real-world problems, and also familiarize
+            myself with the software development lifecycle in a large tech company.
+          </p>
+          <p>
+            The project I was tasked with involved implementing a queryable interface for an internal experiment launch
+            tool. I build a Java backend that searched through hundreds of configuration files to extract the specific
+            files containing the specific requirements involved in launching the experiment correlated with the query.
+            The backend then sent the extracted data to the frontend, where I used HTML to build
+            a simple table display for users to easily see what they need to have before launching their experiment.
+          </p>
+          <p>
+            This project was a great introduction to working in a large codebase and collaborating with other engineers.
+            I also learned how to write and review production-quality code, as well as quickly learn and utilize new
+            langauges and tools that I was previously
+            unfamiliar with.
           </p>
         </div>
+        <div class="project-detail-content">
 
-        <div class="experience-section">
-          <h2>Key Accomplishments</h2>
+          <div class="project-detail-section">
+            <h2>What I learned</h2>
+            <ul class="feature-list">
+              <li>How to navigate and contribute to a large codebase</li>
+              <li>How to write production-quality code and perform code reviews</li>
+              <li>How to effectively communicate and collaborate with my mentor and team members</li>
+              <li>New programming languages and database querying tools</li>
+            </ul>
+          </div>
 
-          <h3>Full-Stack Feature Implementation</h3>
-          <p>
-            Implemented a complete full-stack feature for an internal experiment launch tool by extracting data from
-            metamodels using Java and Google's internal configuration language, then rendering detailed tables using
-            TypeScript and HTML. This feature became part of the core platform functionality.
-          </p>
+          <div class="project-detail-section">
+            <h2>Technologies Used</h2>
+            <ul class="tech-list">
+              <li>Java</li>
+              <li>HTML</li>
+              <li>Google's internal configuration language</li>
+              <li>Google Search infrastructure and tools</li>
+              <li>Google IDE and Git tools</li>
+            </ul>
+          </div>
 
-          <h3>Standardized File Format</h3>
-          <p>
-            Created a standardized file format using an internal configuration language to extract shared attributes
-            from a collection of attribute files. This reduced manual effort significantly and improved efficiency
-            across the team's workflow.
-          </p>
-
-          <h3>Production Launch</h3>
-          <p>
-            Successfully completed the full development lifecycle—from design documentation through implementation to
-            production launch. Demonstrated ownership and attention to detail in every phase of the project.
-          </p>
-
-        </div>
-
-        <div class="experience-section">
-          <h2>Technical Skills Developed</h2>
-          <div class="skills-grid">
-            <div class="skill-card">
-              <h4>Backend Development</h4>
-              <p>Java, Google's internal configuration language, API design</p>
+          <div class="project-detail-section">
+            <h2>Photos</h2>
+            <p class="photo-subtitle">Some highlights from my internship</p>
+            <div class="photo-gallery">
+              <figure class="photo-item" onclick="openLightbox(0)">
+                <img src="images/google_24/IMG_1655.JPEG" alt="Google Summer 2024">
+                <figcaption>Googleplex (where I worked)</figcaption>
+              </figure>
+              <figure class="photo-item" onclick="openLightbox(1)">
+                <img src="images/google_24/IMG_1673.JPEG" alt="Google Summer 2024">
+                <figcaption>Some Android statues around the Mountain View campus</figcaption>
+              </figure>
+              <figure class="photo-item" onclick="openLightbox(2)">
+                <img src="images/google_24/IMG_1802.JPEG" alt="Google Summer 2024">
+                <figcaption>Google San Francisco rooftop</figcaption>
+              </figure>
+              <figure class="photo-item" onclick="openLightbox(3)">
+                <img src="images/google_24/IMG_1818.JPEG" alt="Google Summer 2024">
+                <figcaption>Fun day at Great America with other interns</figcaption>
+              </figure>
+              <figure class="photo-item" onclick="openLightbox(4)">
+                <img src="images/google_24/IMG_2087.JPEG" alt="Google Summer 2024">
+                <figcaption>Google Maps car</figcaption>
+              </figure>
+              <figure class="photo-item" onclick="openLightbox(5)">
+                <img src="images/google_24/IMG_2129.JPEG" alt="Google Summer 2024">
+                <figcaption>National Intern Day</figcaption>
+              </figure>
+              <figure class="photo-item" onclick="openLightbox(6)">
+                <img src="images/google_24/IMG_2189.JPEG" alt="Google Summer 2024">
+                <figcaption>Took a cooking class at Google</figcaption>
+              </figure>
             </div>
-            <div class="skill-card">
-              <h4>Frontend Development</h4>
-              <p>TypeScript, HTML, rendering complex data structures</p>
-            </div>
-            <div class="skill-card">
-              <h4>System Design</h4>
-              <p>Data extraction, metadata handling, tool usability</p>
-            </div>
-            <div class="skill-card">
-              <h4>Google's Engineering Culture</h4>
-              <p>Code review practices, design documentation, production quality standards</p>
+
+            <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+              <button class="lightbox-close" onclick="closeLightbox()">&#215;</button>
+              <button class="lightbox-prev" onclick="event.stopPropagation(); shiftLightbox(-1)">&#8249;</button>
+              <div class="lightbox-content" onclick="event.stopPropagation()">
+                <img id="lightbox-img" src="" alt="">
+                <p id="lightbox-caption"></p>
+              </div>
+              <button class="lightbox-next" onclick="event.stopPropagation(); shiftLightbox(1)">&#8250;</button>
             </div>
           </div>
-        </div>
 
-        <div class="experience-section">
-          <h2>What I Learned</h2>
-          <ul class="learning-list">
-            <li><strong>Developer Productivity Matters:</strong> The tools engineers use significantly impact their
-              efficiency and happiness. Small improvements can have widespread positive effects.</li>
-            <li><strong>Documentation is Critical:</strong> Thorough design documentation helped me think through the
-              feature design and communicate with team members effectively.</li>
-            <li><strong>Production Excellence:</strong> Google's standard for production-ready code elevated my
-              understanding of quality, reliability, and maintainability.</li>
-            <li><strong>Cross-Functional Collaboration:</strong> Working with different teams taught me how to
-              communicate technical concepts clearly to diverse audiences.</li>
-          </ul>
-        </div>
 
-        <div class="experience-section cta-section">
-          <a href="index.html#experience" class="btn btn-primary">Back to Experience</a>
         </div>
       </div>
-    </div>
   </section>
+
+  <footer>
+    <span class="footer-name">Elizabeth Chen — Portfolio</span>
+    <ul class="footer-links">
+      <li><a href="mailto:elizabethchen05@email.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/elizabeth-c-059762238/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://github.com/lizchen123" target="_blank">GitHub</a></li>
+      <li><a href="files/Elizabeth_C_Resume_2026.pdf" download="Elizabeth_Chen_Resume">Resume</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 Elizabeth Chen</span>
+  </footer>
+  <script src="lightbox.js"></script>
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  </script>
 
 </body>
 

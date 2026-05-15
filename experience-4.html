@@ -11,6 +11,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="experience-styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -26,7 +27,6 @@
     </ul>
   </nav>
 
-  <!-- experience detail -->
   <section id="experience-detail">
     <div class="experience-detail-inner">
       <div class="experience-detail-header">
@@ -42,36 +42,33 @@
           </div>
         </div>
       </div>
-
-      <div class="experience-detail-meta">
-        <div class="meta-item">
-          <span class="meta-label">Duration</span>
-          <span class="meta-value">Fall 2026 (Upcoming)</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Location</span>
-          <span class="meta-value">Cambridge, MA</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Team</span>
-          <span class="meta-value">Google Photos Team</span>
-        </div>
-      </div>
-
-      <div class="experience-detail-content">
-        <div class="experience-section">
-          <h2>Role Overview</h2>
+      <div class="project-detail-content">
+        <div class="project-detail-section">
+          <h2>Overview</h2>
           <p>
-            Incoming internship at Google's Cambridge office on the Google Photos Team.
+            Incoming Fall 2026 on Photos team
           </p>
         </div>
 
-        <div class="experience-section cta-section">
-          <a href="index.html#experience" class="btn btn-primary">Back to Experience</a>
-        </div>
       </div>
-    </div>
   </section>
+
+  <footer>
+    <span class="footer-name">Elizabeth Chen — Portfolio</span>
+    <ul class="footer-links">
+      <li><a href="mailto:elizabethchen05@email.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/elizabeth-c-059762238/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://github.com/lizchen123" target="_blank">GitHub</a></li>
+      <li><a href="files/Elizabeth_C_Resume_2026.pdf" download="Elizabeth_Chen_Resume">Resume</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 Elizabeth Chen</span>
+  </footer>
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  </script>
 
 </body>
 
