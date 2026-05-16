@@ -287,9 +287,13 @@ h2.section-title em {
     border-color: var(--border);
     display: inline-block;
     padding: .85rem 1rem;
+    position: relative;
+    z-index: 1;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-.btn-outline:hover {
+.btn-outline:hover,
+.project-card-link .btn-outline:hover {
     background: var(--accent);
     color: var(--bg);
     border-color: var(--accent);
