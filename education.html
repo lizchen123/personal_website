@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Education - Elizabeth Chen Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- menu -->
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">Home</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#education">Education</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#expanded-projects">Projects</a></li>
+      <li><a href="index.html#leadership">Leadership</a></li>
+    </ul>
+  </nav>
+
+  <!-- education detail -->
+  <section id="project-detail">
+    <div class="project-detail-inner">
+      <div class="project-detail-header">
+        <a href="index.html#education" class="back-link">&larr; Back to Education</a>
+        <h1 class="project-detail-title">Cornell University</h1>
+      </div>
+
+      <div class="project-detail-meta">
+        <div class="project-detail-tags">
+          <span class="tag">B.S. Computer Science</span>
+          <span class="tag">College of Engineering</span>
+          <span class="tag">Expected May 2027</span>
+        </div>
+      </div>
+
+      <div class="project-detail-content">
+        <div class="project-detail-section">
+          <h2>Program Overview</h2>
+          <p>
+            I am pursuing a Bachelor of Science in Computer Science in Cornell Engineering, with interests in software
+            engineering, machine learning, and computer systems. My coursework blends theoretical foundations with
+            hands-on implementation across systems, algorithms, and data-driven applications.
+          </p>
+        </div>
+
+        <div class="project-detail-section">
+          <h2>Relevant Coursework</h2>
+          <ul class="feature-list">
+            <li>CS 2110 - Data Structures and Functional Programming</li>
+            <li>CS 2800 - Discrete Structures</li>
+            <li>CS 3110 - Data Structures and Functional Programming (OCaml)</li>
+            <li>CS 3410 - Computer System Organization and Programming</li>
+            <li>CS 3700 - AI Reasoning </li>
+            <li>CS 3780 - Intro to Machine Learning</li>
+            <li>CS 4410 - Operating Systems</li>
+            <li>CS 4740 - NLP </li>
+            <li>CS 4850 - Probability, Vectors, and Matrices in Computing</li> 
+            <li>AEM 4150 - Price Analysis</li>
+          </ul>
+        </div>
+
+        <div class="project-detail-section">
+          <h2>Academic Highlights</h2>
+          <ul class="tech-list">
+            <li>Teaching Assistant, CS 2110 - lead discussions and office hours for 500+ students</li>
+            <li>Applied systems and algorithmic concepts in full-stack internship and personal projects</li>
+            <li>Built strong foundations in software design, testing, and problem decomposition</li>
+          </ul>
+        </div>
+
+        <div class="project-detail-section">
+          <h2>Campus Involvement</h2>
+          <ul class="feature-list">
+            <li>Society of Women Engineers - Prospective Students Committee Director</li>
+            <li>Association of Computer Science Undergraduates - Social Board Member</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer>
+    <span class="footer-name">Elizabeth Chen - Portfolio</span>
+    <ul class="footer-links">
+      <li><a href="mailto:elizabethchen05@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/elizabeth-c-059762238/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://github.com/lizchen123" target="_blank">GitHub</a></li>
+      <li><a href="files/Elizabeth_Chen_Resume_2027.pdf" download="Elizabeth_Chen_Resume">Resume</a></li>
+    </ul>
+    <span class="footer-copy">&copy; 2026 Elizabeth Chen</span>
+  </footer>
+
+  <!-- js -->
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  </script>
+</body>
+
+</html>
