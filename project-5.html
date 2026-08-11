@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}());</script>
   <title>Project Five — Elizabeth Chen Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,17 +21,19 @@
     <a href="index.html" class="nav-logo">Home</a>
     <ul class="nav-links">
       <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#education">Education</a></li>
       <li><a href="index.html#experience">Experience</a></li>
-      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#expanded-projects">Projects</a></li>
       <li><a href="index.html#leadership">Leadership</a></li>
     </ul>
+    <button id="dark-toggle" class="dark-toggle" aria-label="Toggle dark mode">☾</button>
   </nav>
 
   <!-- project -->
   <section id="project-detail">
     <div class="project-detail-inner">
       <div class="project-detail-header">
-        <a href="index.html#projects" class="back-link">← Back to Projects</a>
+        <a href="index.html#expanded-projects" class="back-link">← Back to Projects</a>
         <h1 class="project-detail-title">OCaml Monopoly</h1>
       </div>
 
@@ -39,6 +42,20 @@
           <span class="tag">OCaml</span>
           <span class="tag">Functional Programming</span>
           <span class="tag">Game Development</span>
+        </div>
+        <div class="project-stats">
+          <div class="stat-item">
+            <span class="stat-label">Context</span>
+            <span class="stat-value">Course Project</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Course</span>
+            <span class="stat-value">CS 3110</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Stack</span>
+            <span class="stat-value">Pure OCaml</span>
+          </div>
         </div>
       </div>
 
@@ -66,7 +83,7 @@
             language in a fun and engaging way.
           </p>
         </div>
-        <div class="project-detail-content">
+        <div class="project-detail-section">
           <div class="project-detail-section">
             <h2>Demo</h2>
             <iframe class="project-video" src="https://www.youtube.com/embed/rgdkLk0uKjg?autoplay=1&mute=1">
@@ -126,6 +143,17 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
+    const darkToggle = document.getElementById('dark-toggle');
+    if (darkToggle) {
+      darkToggle.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀' : '☾';
+      darkToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const next = isDark ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        darkToggle.textContent = next === 'dark' ? '☀' : '☾';
+      });
+    }
   </script>
 
 </body>

@@ -32,7 +32,8 @@
 }
 
 .experience-logo-large.google-badge {
-  background: transparent;
+  background: #ffffff;
+  border: 1.5px solid #e0e0e0;
 }
 
 .experience-logo-large.youtube-badge {
@@ -110,7 +111,7 @@
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 24px;
-  color: var(--surface);
+  color: var(--accent);
   position: relative;
   padding-bottom: 12px;
 }
@@ -289,7 +290,7 @@
 .skill-card h4 {
   font-size: 16px;
   font-weight: 700;
-  color: var(--surface);
+  color: var(--text);
   margin-bottom: 8px;
 }
 
@@ -331,7 +332,7 @@
 }
 
 .learning-list strong {
-  color: var(--surface);
+  color: var(--text);
   font-weight: 700;
 }
 
@@ -355,7 +356,7 @@
 }
 
 .back-link:hover {
-  color: var(--surface);
+  color: var(--accent2);
   transform: translateX(-5px);
 }
 

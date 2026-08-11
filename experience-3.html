@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}());</script>
   <title>Meta Summer 2026 — Elizabeth Chen Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,10 +22,12 @@
     <a href="index.html" class="nav-logo">Home</a>
     <ul class="nav-links">
       <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#education">Education</a></li>
       <li><a href="index.html#experience">Experience</a></li>
-      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#expanded-projects">Projects</a></li>
       <li><a href="index.html#leadership">Leadership</a></li>
     </ul>
+    <button id="dark-toggle" class="dark-toggle" aria-label="Toggle dark mode">☾</button>
   </nav>
 
   <section id="experience-detail">
@@ -33,12 +36,11 @@
         <a href="index.html#experience" class="back-link">← Back to Experience</a>
         <div class="experience-detail-title-block">
           <div class="experience-logo-large meta-badge">
-            <img src="https://cdn.simpleicons.org/meta/ffffff" alt="Meta"
-              class="exp-logo-img-large">
+            <img src="https://cdn.simpleicons.org/meta/ffffff" alt="Meta" class="exp-logo-img-large">
           </div>
           <div>
             <h1 class="experience-detail-title">Software Engineer Intern</h1>
-            <p class="experience-company">Google</p>
+            <p class="experience-company">Meta</p>
           </div>
         </div>
       </div>
@@ -46,9 +48,106 @@
         <div class="project-detail-section">
           <h2>Overview</h2>
           <p>
-            Incoming summer 2026 on Signal Growth team. 
+            During my summer at Meta, I worked as a Software Engineering Intern on the Ads team, focusing on the mobile
+            browser autofill system across Facebook and Instagram. I worked on a large-scale platform restructuring
+            project that addressed data integrity issues affecting users across billions of browsing sessions. This
+            experience gave me the opportunity to work on a production system at significant scale while gaining a
+            deeper understanding of mobile architecture, cross-platform development, and experimentation.
+          </p>
+          <p>
+            My main project involved resolving a data integrity bug where form data from one browser tab could leak into
+            and corrupt the state of another tab. I designed and implemented an architectural overhaul across both
+            Android and iOS, replacing a legacy shared singleton state model with isolated per-tab form states. I owned
+            the final phase of this multi-quarter restructuring effort end-to-end, from designing the new architecture
+            and implementing the changes to testing and validating the solution through production experimentation.
+          </p>
+          <p>
+            While developing and testing the new architecture, I also proactively identified two additional user-facing
+            bugs that were not part of the original project scope. I developed novel multi-tab isolation tests to
+            uncover these issues and worked through their fixes using AI-assisted development to accelerate codebase
+            exploration, implementation, and test generation.
+          </p>
+          <p>
+            This internship gave me valuable experience working on large-scale production systems and taught me how
+            seemingly small architectural decisions can have significant effects on reliability and user experience. I
+            also gained experience taking ownership of complex projects, navigating unfamiliar codebases, and using
+            experimentation and testing to validate changes before deploying them to millions of users.
 
           </p>
+        </div>
+        <div class="project-detail-content">
+          <div class="project-detail-section">
+            <h2>What I learned</h2>
+            <ul class="feature-list">
+              <li>How to design and implement changes to large-scale production systems</li>
+              <li>How to navigate and contribute to a complex, unfamiliar codebase</li>
+              <li>How to reason about state management and architectural tradeoffs across mobile platforms</li>
+              <li>How to design effective tests for difficult-to-reproduce, multi-tab bugs</li>
+              <li>How to take ownership of a project from system design through production experimentation</li>
+              <li>How to effectively use AI-assisted development for codebase exploration, implementation, and test generation</li>
+            </ul>
+          </div>
+
+          <div class="project-detail-section">
+            <h2>Technologies Used</h2>
+            <ul class="tech-list">
+              <li>Android</li>
+              <li>iOS</li>
+              <li>Mobile browser infrastructure</li>
+              <li>Cross-platform systems</li>
+              <li>AI-assisted development</li>
+              <li>Production experimentation and testing</li>
+            </ul>
+          </div>
+
+          <div class="project-detail-section">
+            <h2>Photos</h2>
+            <p class="photo-subtitle">Some highlights from my internship</p>
+            <div class="photo-gallery">
+              <figure class="photo-item" onclick="openLightbox(0)">
+                <img src="images/meta_26/meta_1.jpeg" alt="Meta Summer 2026">
+                <figcaption>Cake decorating competition at an intern event</figcaption>
+              </figure>
+              <figure class="photo-item" onclick="openLightbox(1)">
+                <img src="images/meta_26/meta_2.jpeg" alt="Meta Summer 2026">
+                <figcaption>Meta watercolor class</figcaption>
+              </figure>
+              <figure class="photo-item" onclick="openLightbox(2)">
+                <img src="images/meta_26/meta_3.jpeg" alt="Meta Summer 2026">
+                <figcaption>Meta PNW Game Day 2026</figcaption>
+              </figure>
+              <figure class="photo-item" onclick="openLightbox(3)">
+                <img src="images/meta_26/meta_4.jpeg" alt="Meta Summer 2026">
+                <figcaption>Intern baseball night (mariners won!!)</figcaption>
+              </figure>
+              <figure class="photo-item" onclick="openLightbox(4)">
+                <img src="images/meta_26/meta_5.jpeg" alt="Meta Summer 2026">
+                <figcaption>Intern meetup at Seattle Waterfront</figcaption>
+              </figure>
+              <figure class="photo-item" onclick="openLightbox(5)">
+                <img src="images/meta_26/meta_6.jpeg" alt="Meta Summer 2026">
+                <figcaption>Zuckerberg poster in Seattle Dexter office</figcaption>
+              </figure>
+              <figure class="photo-item" onclick="openLightbox(6)">
+                <img src="images/meta_26/meta_7.jpeg" alt="Meta Summer 2026">
+                <figcaption>Memento from this summer</figcaption>
+              </figure>
+              <figure class="photo-item" onclick="openLightbox(7)">
+                <img src="images/meta_26/meta_8.jpeg" alt="Meta Summer 2026">
+                <figcaption>Intern swag</figcaption>
+              </figure>
+            </div>
+
+            <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+              <button class="lightbox-close" onclick="closeLightbox()">&#215;</button>
+              <button class="lightbox-prev" onclick="event.stopPropagation(); shiftLightbox(-1)">&#8249;</button>
+              <div class="lightbox-content" onclick="event.stopPropagation()">
+                <img id="lightbox-img" src="" alt="">
+                <p id="lightbox-caption"></p>
+              </div>
+              <button class="lightbox-next" onclick="event.stopPropagation(); shiftLightbox(1)">&#8250;</button>
+            </div>
+          </div>
         </div>
       </div>
   </section>
@@ -63,11 +162,23 @@
     </ul>
     <span class="footer-copy">© 2026 Elizabeth Chen</span>
   </footer>
+  <script src="lightbox.js"></script>
   <script>
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
+    const darkToggle = document.getElementById('dark-toggle');
+    if (darkToggle) {
+      darkToggle.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀' : '☾';
+      darkToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const next = isDark ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        darkToggle.textContent = next === 'dark' ? '☀' : '☾';
+      });
+    }
   </script>
 
 </body>

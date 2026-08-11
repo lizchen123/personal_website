@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Elizabeth Chen Personal Website</title>
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}());</script>
+  <title>Elizabeth Chen Cornell</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
@@ -21,9 +22,11 @@
       <li><a href="#about">About</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#expanded-projects">Projects</a></li>
+      <li><a href="#research">Research</a></li>
       <li><a href="#leadership">Leadership</a></li>
     </ul>
+    <button id="dark-toggle" class="dark-toggle" aria-label="Toggle dark mode">☾</button>
   </nav>
 
   <!-- hero screen -->
@@ -55,7 +58,7 @@
         Chen
       </h1>
       <p class="hero-tagline">
-        Junior Computer Science major at Cornell University
+        Senior Computer Science major at Cornell University
       </p>
       <div class="hero-cta">
         <a href="#expanded-projects" class="btn btn-primary">View Work</a>
@@ -125,12 +128,15 @@
         </div>
         <div>
           <div class="edu-degree">B.S. in Computer Science, College of Engineering</div>
-          <div class="edu-focus">Focus areas: Software Engineering, Machine Learning, and Systems</div>
+          <div class="edu-focus">Minors: AI, Applied Economics</div>
           <div class="project-tags">
             <span class="tag">Data Structures</span>
             <span class="tag">Algorithms</span>
             <span class="tag">Computer Systems</span>
             <span class="tag">AI</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Business</span>
+            <span class="tag">Economics</span>
           </div>
           <ul class="edu-highlights">
             <p>Click to view relevant coursework and academic details.</p>
@@ -181,7 +187,8 @@
           <div class="exp-card-location">Bellevue, WA</div>
           <hr class="exp-divider">
           <ul class="exp-description">
-            <p>Incoming this summer on Signal Growth Team</p>
+            <p>Redesigned the Android and iOS Autofill infrastructure to work across multiple browser tabs, ensuring
+              data integrity and improving user experience.</p>
           </ul>
         </div>
       </a>
@@ -412,43 +419,10 @@
       </div>
     </a>
 
-    <!-- project 3 -->
-    <a href="project-3.html" class="project-card-link">
-      <div class="project-card reveal" id="project-python">
-        <div class="project-num">03</div>
-        <div class="project-link" title="View project">↗</div>
-        <div class="project-title">Computer Vision Hand Measurements</div>
-        <p class="project-desc">
-          Uses OpenCV to analyze hands and estimate measurements for patients with lymphedma
-          to help patients get at-home treatment and monitoring.
-        </p>
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Typescript</span>
-          <span class="tag">OpenCV</span>
-        </div>
-        <div class="project-extended-title">Overview</div>
-        <p class="project-desc">
-          The KnitDema project is an innovative application designed to assist people with lipedema or other
-          dexterity-affecting conditions to access at-home, readily-available treatment through a specially-molded
-          glove. The glove is equipped with sensors that can detect the user's hand movements and gestures, which are
-          then processed by a machine learning model to provide real-time feedback and guidance on performing
-          lymphatic drainage massage techniques effectively. The software component of this system ensures users have a
-          easy and seamless experience connecting the glove to the app to access the different treatment modules via
-          bluetooth. The system also integrates computer vision to measure patient hand dimensions and automatically
-          generate a custom glove bitmap for the knitters to use, rather than having the patients come to the lab to get
-          their hands measured. The overall goal of this project is to make the treatment more accessible and
-          personalized for patients, while also providing valuable data researchers using computer vision to efficiently
-          and accurately measure hand dimensions for custom glove generation.
-        </p>
-        <button onclick="window.location.href='project-3.html'" class="btn btn-outline">See More</button>
-      </div>
-    </a>
-
     <!-- project 4 -->
     <a href="project-4.html" class="project-card-link">
       <div class="project-card reveal" id="project-app">
-        <div class="project-num">04</div>
+        <div class="project-num">03</div>
         <div class="project-link" title="View project">↗</div>
         <div class="project-title">YouTube Music Translation UI</div>
         <p class="project-desc">
@@ -478,7 +452,7 @@
     <!-- project 5 -->
     <a href="project-5.html" class="project-card-link">
       <div class="project-card reveal" id="project-ocaml">
-        <div class="project-num">05</div>
+        <div class="project-num">04</div>
         <div class="project-link" title="View project">↗</div>
         <div class="project-title">Monopoly</div>
         <p class="project-desc">
@@ -504,7 +478,7 @@
     <!-- project 6 -->
     <a href="project-6.html" class="project-card-link">
       <div class="project-card reveal" id="project-cpp">
-        <div class="project-num">06</div>
+        <div class="project-num">05</div>
         <div class="project-link" title="View project">↗</div>
         <div class="project-title">Personal Website</div>
         <p class="project-desc">
@@ -530,6 +504,59 @@
     </a>
 
   </section>
+
+  <!-- research -->
+  <section id="research">
+    <h2 class="section-title">Research</h2>
+
+    <!-- research 1 - KnitDema / Hybrid Body Lab -->
+    <a href="project-3.html" class="project-card-link">
+      <div class="project-card reveal">
+        <div class="project-num">01</div>
+        <div class="project-link" title="View project">↗</div>
+        <div class="project-title">Computer Vision Hand Measurements</div>
+        <p class="project-desc">
+          Uses OpenCV to analyze hands and estimate measurements for patients with lymphedema
+          to help patients get at-home treatment and monitoring.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Typescript</span>
+          <span class="tag">OpenCV</span>
+        </div>
+        <div class="project-extended-title">Overview</div>
+        <p class="project-desc">
+          The KnitDema project is an innovative application designed to assist people with lipedema or other
+          dexterity-affecting conditions to access at-home, readily-available treatment through a specially-molded
+          glove. Computer vision measures patient hand dimensions and automatically generates a custom glove bitmap,
+          making treatment more accessible and personalized for patients.
+        </p>
+        <button onclick="window.location.href='project-3.html'" class="btn btn-outline">See More</button>
+      </div>
+    </a>
+
+    <!-- research 2 - blank -->
+    <a href="#" class="project-card-link">
+      <div class="project-card reveal">
+        <div class="project-num">02</div>
+        <div class="project-link" title="View project">↗</div>
+        <div class="project-title">Research Title</div>
+        <p class="project-desc">
+          Brief description of the research project.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Tag</span>
+        </div>
+        <div class="project-extended-title">Overview</div>
+        <p class="project-desc">
+          Extended description of the research project.
+        </p>
+        <button class="btn btn-outline">See More</button>
+      </div>
+    </a>
+
+  </section>
+
   <!-- leadership -->
   <section id="leadership">
     <h2 class="section-title">Leadership</h2>

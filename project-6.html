@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}());</script>
   <title>Project Six — Elizabeth Chen Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,17 +19,19 @@
     <a href="index.html" class="nav-logo">Home</a>
     <ul class="nav-links">
       <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#education">Education</a></li>
       <li><a href="index.html#experience">Experience</a></li>
-      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#expanded-projects">Projects</a></li>
       <li><a href="index.html#leadership">Leadership</a></li>
     </ul>
+    <button id="dark-toggle" class="dark-toggle" aria-label="Toggle dark mode">☾</button>
   </nav>
 
   <!-- project -->
   <section id="project-detail">
     <div class="project-detail-inner">
       <div class="project-detail-header">
-        <a href="index.html#projects" class="back-link">← Back to Projects</a>
+        <a href="index.html#expanded-projects" class="back-link">← Back to Projects</a>
         <h1 class="project-detail-title">Personal Website</h1>
       </div>
 
@@ -38,6 +41,20 @@
         <span class="tag">CSS</span>
         <span class="tag">JavaScript</span>
         <span class="tag">Web Development</span>
+        </div>
+        <div class="project-stats">
+          <div class="stat-item">
+            <span class="stat-label">Context</span>
+            <span class="stat-value">Course Project</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Course</span>
+            <span class="stat-value">ENGRC 3025</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Stack</span>
+            <span class="stat-value">HTML / CSS / JS</span>
+          </div>
         </div>
       </div>
 
@@ -115,6 +132,17 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
+    const darkToggle = document.getElementById('dark-toggle');
+    if (darkToggle) {
+      darkToggle.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀' : '☾';
+      darkToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const next = isDark ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        darkToggle.textContent = next === 'dark' ? '☀' : '☾';
+      });
+    }
   </script>
 </body>
 
