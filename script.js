@@ -39,3 +39,26 @@ if (heroSlides.length > 1) {
     heroSlides[heroIdx].classList.add('active');
   }, 2800); // 2s visible + 0.8s fade
 }
+
+// smooth project card expand: measure real height before animating
+document.querySelectorAll('.project-card-link').forEach(link => {
+  const card = link.querySelector('.project-card');
+  if (!card) return;
+
+  link.addEventListener('mouseenter', () => {
+    // Snapshot true height with no constraint
+    card.style.transition = 'none';
+    card.style.maxHeight = 'none';
+    const fullH = card.scrollHeight;
+    // Reset to collapsed without transition, then animate
+    card.style.maxHeight = '220px';
+    card.offsetHeight; // force reflow so browser registers the reset
+    card.style.transition = 'max-height 0.6s cubic-bezier(0.34, 1.02, 0.68, 1), box-shadow 0.4s ease, background 0.25s ease, border-color 0.25s ease';
+    card.style.maxHeight = fullH + 'px';
+  });
+
+  link.addEventListener('mouseleave', () => {
+    card.style.transition = 'max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease, background 0.25s ease, border-color 0.25s ease';
+    card.style.maxHeight = '220px';
+  });
+});
