@@ -62,3 +62,16 @@ document.querySelectorAll('.project-card-link').forEach(link => {
     card.style.maxHeight = '220px';
   });
 });
+
+// dark mode toggle
+const darkToggle = document.getElementById('dark-toggle');
+if (darkToggle) {
+  darkToggle.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀' : '☾';
+  darkToggle.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    darkToggle.textContent = next === 'dark' ? '☀' : '☾';
+  });
+}

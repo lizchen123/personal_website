@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}());</script>
   <title>Project Two — Elizabeth Chen Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,9 +21,10 @@
       <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#education">Education</a></li>
       <li><a href="index.html#experience">Experience</a></li>
-      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#expanded-projects">Projects</a></li>
       <li><a href="index.html#leadership">Leadership</a></li>
     </ul>
+    <button id="dark-toggle" class="dark-toggle" aria-label="Toggle dark mode">☾</button>
   </nav>
 
   <!-- project -->
@@ -39,6 +41,20 @@
         <span class="tag">ML</span>
         <span class="tag">Data Analysis</span>
         <span class="tag">Full Stack</span>
+        </div>
+        <div class="project-stats">
+          <div class="stat-item">
+            <span class="stat-label">Context</span>
+            <span class="stat-value">Hackathon</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Role</span>
+            <span class="stat-value">Full Stack + ML</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Duration</span>
+            <span class="stat-value">72-hour sprint</span>
+          </div>
         </div>
       </div>
 
@@ -128,6 +144,17 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
+    const darkToggle = document.getElementById('dark-toggle');
+    if (darkToggle) {
+      darkToggle.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀' : '☾';
+      darkToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const next = isDark ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        darkToggle.textContent = next === 'dark' ? '☀' : '☾';
+      });
+    }
   </script>
 </body>
 

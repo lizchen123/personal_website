@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}());</script>
   <title>Google Summer 2024 — Elizabeth Chen Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,9 +24,10 @@
       <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#education">Education</a></li>
       <li><a href="index.html#experience">Experience</a></li>
-      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#expanded-projects">Projects</a></li>
       <li><a href="index.html#leadership">Leadership</a></li>
     </ul>
+    <button id="dark-toggle" class="dark-toggle" aria-label="Toggle dark mode">☾</button>
   </nav>
 
   <section id="experience-detail">
@@ -157,6 +159,17 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
+    const darkToggle = document.getElementById('dark-toggle');
+    if (darkToggle) {
+      darkToggle.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀' : '☾';
+      darkToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const next = isDark ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        darkToggle.textContent = next === 'dark' ? '☀' : '☾';
+      });
+    }
   </script>
 
 </body>
