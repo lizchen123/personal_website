@@ -188,7 +188,19 @@ nav.scrolled {
 
 .dark-toggle:hover {
     border-color: var(--accent);
-    background: var(--accent-light);
+    background: var(--accent);
+    color: #fff;
+}
+
+[data-theme="dark"] .dark-toggle {
+    color: var(--muted);
+    border-color: var(--muted);
+}
+
+[data-theme="dark"] .dark-toggle:hover {
+    border-color: #fff;
+    background: #fff;
+    color: var(--accent2);
 }
 
 /* sections */
@@ -242,6 +254,22 @@ h2.section-title em {
 
 .hero-slide.active {
     opacity: 1;
+}
+
+.hero-slide::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right,
+        var(--bg) 0%,
+        var(--bg) 35%,
+        color-mix(in srgb, var(--bg) 90%, transparent) 50%,
+        color-mix(in srgb, var(--bg) 60%, transparent) 62%,
+        color-mix(in srgb, var(--bg) 30%, transparent) 72%,
+        color-mix(in srgb, var(--bg) 10%, transparent) 80%,
+        transparent 88%
+    );
+    pointer-events: none;
 }
 
 .hero-inner {
@@ -1047,7 +1075,9 @@ h2.section-title em {
     border-radius: 20px;
     display: block;
     width: 100%;
+    height: auto;
     aspect-ratio: 16/9;
+    align-self: stretch;
 }
 
 .tech-list {
