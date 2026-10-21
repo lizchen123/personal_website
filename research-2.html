@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}());</script>
+  <title>LDI Replication — Elizabeth Chen Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- menu -->
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">Home</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#education">Education</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#expanded-projects">Projects</a></li>
+      <li><a href="index.html#research">Research</a></li>
+      <li><a href="index.html#leadership">Leadership</a></li>
+    </ul>
+    <button id="dark-toggle" class="dark-toggle" aria-label="Toggle dark mode">☾</button>
+  </nav>
+
+  <!-- research -->
+  <section id="project-detail">
+    <div class="project-detail-inner">
+      <div class="project-detail-header">
+        <a href="index.html#research" class="back-link">← Back to Research</a>
+        <div class="project-detail-title-block">
+          <div>
+            <h1 class="project-detail-title">LDI Replication</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-detail-meta">
+        <div class="project-detail-tags">
+          <span class="tag">Stata</span>
+          <span class="tag">MATLAB</span>
+          <span class="tag">R</span>
+          <span class="tag">Python</span>
+        </div>
+        <div class="project-stats">
+          <div class="stat-item">
+            <span class="stat-label">Context</span>
+            <span class="stat-value">Undergraduate Research</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Organization</span>
+            <span class="stat-value">American Economic Association</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Location</span>
+            <span class="stat-value">Ithaca, NY</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-detail-content">
+        <div class="project-detail-section">
+          <h2>Overview</h2>
+          <p>
+            The LDI Replication project is part of the American Economic Association's initiative to improve research transparency and methodological rigor across empirical studies. This work involves evaluating the computational and statistical replicability of manuscripts and datasets from research labs nationwide, ensuring that reported results are internally consistent and reproducible.
+          </p>
+          <p>
+            In this role, I reconstruct data pipelines using various statistical and programming languages to verify the integrity of research findings. I work across complex datasets and codebases to identify inconsistencies between documented methodology, actual implementation, and reported results. My contributions help researchers strengthen their work and contribute to broader improvements in research transparency and reproducibility standards.
+          </p>
+        </div>
+
+        <div class="project-detail-section">
+          <h2>Key Responsibilities</h2>
+          <ul class="feature-list">
+            <li>Assess computational and statistical replicability of manuscripts and datasets from research labs nationwide</li>
+            <li>Reconstruct data pipelines to verify that reported results are internally consistent and reproducible</li>
+            <li>Identify inconsistencies between code, data, and written methodology, communicating findings clearly to researchers</li>
+            <li>Critically evaluate research design, identification strategies, statistical assumptions, and robustness checks</li>
+            <li>Train incoming lab technicians on replication methodologies and best practices</li>
+          </ul>
+        </div>
+
+        <div class="project-detail-section">
+          <h2>Technologies & Tools Used</h2>
+          <ul class="tech-list">
+            <li>Stata: Statistical analysis and data manipulation</li>
+            <li>MATLAB: Computational and numerical analysis</li>
+            <li>R: Statistical computing and graphics</li>
+            <li>Python: Data processing and reproducibility verification</li>
+          </ul>
+        </div>
+
+        <div class="project-detail-section">
+          <h2>Organization</h2>
+          <a href="https://www.ilr.cornell.edu/labor-dynamics-institute/ldi-replication-lab" target="_blank" class="btn btn-outline">Visit LDI Replication Lab</a>
+        </div>
+
+      </div>
+
+      <div class="project-detail-footer">
+        <div class="project-nav">
+          <a href="research-1.html" class="btn btn-outline">← Previous Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer>
+    <span class="footer-name">Elizabeth Chen — Portfolio</span>
+    <ul class="footer-links">
+      <li><a href="mailto:elizabethchen05@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/elizabeth-c-059762238/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://github.com/lizchen123" target="_blank">GitHub</a></li>
+      <li><a href="files/Elizabeth_Chen_Resume_2027.pdf" download="Elizabeth_Chen_Resume">Resume</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 Elizabeth Chen</span>
+  </footer>
+  <!-- js -->
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+    const darkToggle = document.getElementById('dark-toggle');
+    if (darkToggle) {
+      darkToggle.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀' : '☾';
+      darkToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const next = isDark ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        darkToggle.textContent = next === 'dark' ? '☀' : '☾';
+      });
+    }
+  </script>
+
+</body>
+
+</html>

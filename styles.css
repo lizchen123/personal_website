@@ -757,6 +757,7 @@ h2.section-title em {
 .project-card {
     background: var(--surface);
     padding: 2rem;
+    padding-bottom: 12rem;
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -787,7 +788,7 @@ h2.section-title em {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 40px;
+    height: 20px;
     background: linear-gradient(to bottom, transparent, var(--surface));
     pointer-events: none;
     transition: opacity 0.3s ease;
